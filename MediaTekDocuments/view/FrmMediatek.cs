@@ -1239,5 +1239,10 @@ namespace MediaTekDocuments.view
             }
         }
         #endregion
+
+        private void btnAjoutLivres_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
