@@ -1240,9 +1240,220 @@ namespace MediaTekDocuments.view
         }
         #endregion
 
-        private void btnAjoutLivres_Click(object sender, EventArgs e)
+        #region Onglet Commande de livres
+
+        //private List<Suivi> lesSuivis = new List<Suivi>();
+        private List<CommandeDocument> lesCommandesDocument = new List<CommandeDocument>();
+        //const string ETAPESUIVIENCOURS = "00001";
+        //const string ETAPESUIVILIVREE = "00003";
+        private readonly BindingSource bdgLivresCommandeSuivi = new BindingSource();
+        private readonly BindingSource bdgLivreCommandesListe = new BindingSource();
+
+        /// <summary>
+        /// Remplit le datagrid qui liste les commandes avec la liste reçue en paramètre
+        /// </summary>
+        /// <param name="commandesDoc">liste de commandes de document</param>
+        private void RemplirCommandesDocListe(DataGridView dgvListeLivresCom, BindingSource bdgCommandes, List<CommandeDocument> commandesDoc)
         {
+            if (commandesDoc != null)
+            {
+                bdgCommandes.DataSource = commandesDoc;
+                dgvListeLivresCom.DataSource = bdgCommandes;
+                dgvListeLivresCom.Columns["id"].Visible = false;
+                dgvListeLivresCom.Columns["idLivreDvd"].Visible = false;
+                dgvListeLivresCom.Columns["idSuivi"].Visible = false;
+                dgvListeLivresCom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvListeLivresCom.Columns["dateCommande"].DisplayIndex = 0;
+                dgvListeLivresCom.Columns["montant"].DisplayIndex = 1;
+                dgvListeLivresCom.Columns["libelleSuivi"].Visible = true;
+            }
+            else
+            {
+                dgvListeLivresCom.DataSource = null;
+            }
+        }
+
+        private void tabCommandeLivre_Enter(object sender, EventArgs e)
+        {
+            lesLivres = controller.GetAllLivres();
+            //lesSuivis = controller.GetAllSuivis();
+            RemplirComboSuivi(controller.GetAllSuivis(), bdgLivresCommandeSuivi, cbxEtatCommandeLivre);
+            ModifCommandeEnCours(false);
+        }
+
+        public void RemplirComboSuivi(List<Suivi>lesSuivis, BindingSource bdg,ComboBox cbx)
+        {
+            bdg.DataSource = lesSuivis;
+            cbx.DataSource = bdg;
+            if (cbx.Items.Count > 0)
+            {
+                cbx.SelectedIndex = 0;
+            }
+        }
+      
+        private void ModifCommandeEnCours(bool modification)
+        {
+            cbxEtatCommandeLivre.Enabled = modification;
+        }
+
+
+        private void btnRechercherCommandeLivre_Click(object sender, EventArgs e)
+        {
+            if (!txbNumDocCommandeLivre.Text.Equals(""))
+            {
+                Livre livre = lesLivres.Find(x => x.Id.Equals(txbNumDocCommandeLivre.Text));
+                if (livre != null)
+                {
+                    AfficheInfosLivreRecherche(livre);
+                }
+                else
+                {
+                    MessageBox.Show("numéro introuvable");
+                }
+            }
+        }
+
+
+            /// <summary>
+            /// Affichage des informations du livre recherché
+            /// </summary>
+            /// <param name="livre"></param>
+            private void AfficheInfosLivreRecherche(Livre livre)
+        {
+            txbNumDocCommandeLivre.Text = livre.Id;
+            txbCommandeLivreTitre.Text = livre.Titre;
+            txbCommandeLivreAuteur.Text = livre.Auteur;
+            txbCommandeLivreCodeISBN.Text = livre.Isbn;
+            txbCommandeLivreCollection.Text = livre.Collection;
+            txbCommandeLivreGenre.Text = livre.Genre;
+            txbCommandeLivrePublic.Text = livre.Public;
+            txbCommandeLivreRayon.Text = livre.Rayon;
+            txbCommandeLivreUrlImage.Text = livre.Image;
+            try
+            {
+                pcbCommandeLivreImage.Image = Image.FromFile(null);
+            }
+            catch
+            {
+                pcbCommandeLivreImage.Image = null;
+            }
+            // affiche la liste des commandes du livre
+            AfficheLivreCommandes();
 
         }
+
+        /// <summary>
+        /// Récupère et affiche les commandes d'un livre
+        /// </summary>
+        private void AfficheLivreCommandes()
+        {
+            string idDocument = txbNumDocCommandeLivre.Text;
+            lesCommandesDocument = controller.GetCommandesDocument(idDocument);
+            RemplirCommandesDocListe(dgvListeLivresCom, bdgLivreCommandesListe, lesCommandesDocument);
+            
+        }
+
+       
+
+
+        /// <summary>
+        /// Ajout d'une commande
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAjoutCommandeLivre_Click(object sender, EventArgs e)
+        {
+            if (!txbNumCommandeLivre.Text.Equals(""))
+            {
+                try
+                {
+                    //Génère l'id de la commande
+                    string id = txbNumCommandeLivre.Text;
+                    string idLivreDvd = txbNumDocCommandeLivre.Text;
+                    int nbExemplaire = int.Parse(txbCommandeLivreNbEx.Text);
+                    DateTime dateCommande = dtpCommandeLivreDate.Value;
+                    // modif du suivi désactivée -> selected item est placé sur 'en cours' à l'ouverture de l'onglet 
+                    Suivi suivi = (Suivi)cbxEtatCommandeLivre.SelectedItem;
+                    //Recup des infos de suivi 
+                    int idSuivi = suivi.Id;
+                    string libelleSuivi = suivi.Libelle;
+
+                    double montant = double.Parse(txbCommandeLivreMontant.Text);
+                   
+                   
+                    CommandeDocument commandeDocument = new CommandeDocument(id, dateCommande, montant, nbExemplaire, idLivreDvd, idSuivi, libelleSuivi);
+                    if (controller.CreerCommandeDocument(commandeDocument))
+                    {
+                        AfficheLivreCommandes();
+                    }
+                    else
+                    {
+                        MessageBox.Show("numéro de commande déjà existant", "Erreur");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Veuillez renseigner des valeurs correctes", "Information");
+                    txbNumCommandeLivre.Text = "";
+                    txbCommandeLivreNbEx.Text = "";
+                    txbCommandeLivreMontant.Text = "";
+                    txbNumCommandeLivre.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("numéro de commande obligatoire", "Information");
+            }
+        }
+
+        private void btnSupprimerCommandeLivre_Click(object sender, EventArgs e)
+        {
+            CommandeDocument commandeDocument = (CommandeDocument)bdgLivreCommandesListe[bdgLivreCommandesListe.Position];
+            if(dgvListeLivresCom.CurrentCell != null)
+            {
+                if(commandeDocument.IdSuivi >2)
+                    MessageBox.Show("Une commande livrée ou réglée ne peut etre supprimée");
+                else if (MessageBox.Show("Voulez vous supprimer la commande "+commandeDocument.Id+"pour le livre"+lesLivres.Find(o => o.Id == commandeDocument.IdLivreDvd).Titre + " ?",
+                    "Validation suppresion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (controller.SupprimerCommandeDocument(commandeDocument.Id))
+                    {
+                        //Livre livre = (Livre)bdgLivreCommandesListe.List[bdgLivreCommandesListe.Position];
+                        AfficheLivreCommandes();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("erreur");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("la selection d'une commande est obligatoire");
+            }
+        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #endregion
+
+
+
 }
+

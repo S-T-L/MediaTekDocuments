@@ -32,8 +32,6 @@ namespace MediaTekDocuments.view
             this.tabOngletsApplication = new System.Windows.Forms.TabControl();
             this.tabLivres = new System.Windows.Forms.TabPage();
             this.grpLivresInfos = new System.Windows.Forms.GroupBox();
-            this.btnModifierLivres = new System.Windows.Forms.Button();
-            this.btnAjoutLivres = new System.Windows.Forms.Button();
             this.label59 = new System.Windows.Forms.Label();
             this.txbLivresIsbn = new System.Windows.Forms.TextBox();
             this.txbLivresImage = new System.Windows.Forms.TextBox();
@@ -180,7 +178,48 @@ namespace MediaTekDocuments.view
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.btnReceptionRechercher = new System.Windows.Forms.Button();
-            this.btnSupprimerLivres = new System.Windows.Forms.Button();
+            this.tabCommandeLivre = new System.Windows.Forms.TabPage();
+            this.grpSuiviCommandeLivre = new System.Windows.Forms.GroupBox();
+            this.btnSupprimerCommandeLivre = new System.Windows.Forms.Button();
+            this.btnMAJSuiviCommandeLivre = new System.Windows.Forms.Button();
+            this.label73 = new System.Windows.Forms.Label();
+            this.cbxEtatCommandeLivre = new System.Windows.Forms.ComboBox();
+            this.dgvListeLivresCom = new System.Windows.Forms.DataGridView();
+            this.btnRechercherCommandeLivre = new System.Windows.Forms.Button();
+            this.txbNumDocCommandeLivre = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.grpCommandeLivreInfo = new System.Windows.Forms.GroupBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txbCommandeLivreCodeISBN = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivreUrlImage = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivreRayon = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivrePublic = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivreGenre = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivreCollection = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivreAuteur = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivreTitre = new System.Windows.Forms.TextBox();
+            this.txbCommandeLivreNumDoc = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.pcbCommandeLivreImage = new System.Windows.Forms.PictureBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.grpCommandeLivre = new System.Windows.Forms.GroupBox();
+            this.btnAjoutCommandeLivre = new System.Windows.Forms.Button();
+            this.txbCommandeLivreNbEx = new System.Windows.Forms.TextBox();
+            this.lblNbExemplaire = new System.Windows.Forms.Label();
+            this.txbCommandeLivreMontant = new System.Windows.Forms.TextBox();
+            this.lblMontant = new System.Windows.Forms.Label();
+            this.dtpCommandeLivreDate = new System.Windows.Forms.DateTimePicker();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txbNumCommandeLivre = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.tabCommandeDVD = new System.Windows.Forms.TabPage();
             this.tabOngletsApplication.SuspendLayout();
             this.tabLivres.SuspendLayout();
             this.grpLivresInfos.SuspendLayout();
@@ -204,6 +243,12 @@ namespace MediaTekDocuments.view
             ((System.ComponentModel.ISupportInitialize)(this.pcbReceptionExemplaireRevueImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionExemplairesListe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReceptionRevueImage)).BeginInit();
+            this.tabCommandeLivre.SuspendLayout();
+            this.grpSuiviCommandeLivre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeLivresCom)).BeginInit();
+            this.grpCommandeLivreInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCommandeLivreImage)).BeginInit();
+            this.grpCommandeLivre.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabOngletsApplication
@@ -212,13 +257,15 @@ namespace MediaTekDocuments.view
             this.tabOngletsApplication.Controls.Add(this.tabDvd);
             this.tabOngletsApplication.Controls.Add(this.tabRevues);
             this.tabOngletsApplication.Controls.Add(this.tabReceptionRevue);
+            this.tabOngletsApplication.Controls.Add(this.tabCommandeLivre);
+            this.tabOngletsApplication.Controls.Add(this.tabCommandeDVD);
             this.tabOngletsApplication.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabOngletsApplication.ItemSize = new System.Drawing.Size(49, 18);
             this.tabOngletsApplication.Location = new System.Drawing.Point(0, 0);
             this.tabOngletsApplication.Margin = new System.Windows.Forms.Padding(4);
             this.tabOngletsApplication.Name = "tabOngletsApplication";
             this.tabOngletsApplication.SelectedIndex = 0;
-            this.tabOngletsApplication.Size = new System.Drawing.Size(1177, 849);
+            this.tabOngletsApplication.Size = new System.Drawing.Size(1177, 881);
             this.tabOngletsApplication.TabIndex = 0;
             // 
             // tabLivres
@@ -228,7 +275,7 @@ namespace MediaTekDocuments.view
             this.tabLivres.Location = new System.Drawing.Point(4, 22);
             this.tabLivres.Margin = new System.Windows.Forms.Padding(4);
             this.tabLivres.Name = "tabLivres";
-            this.tabLivres.Size = new System.Drawing.Size(1169, 823);
+            this.tabLivres.Size = new System.Drawing.Size(1169, 855);
             this.tabLivres.TabIndex = 2;
             this.tabLivres.Text = "Livres";
             this.tabLivres.UseVisualStyleBackColor = true;
@@ -236,9 +283,6 @@ namespace MediaTekDocuments.view
             // 
             // grpLivresInfos
             // 
-            this.grpLivresInfos.Controls.Add(this.btnSupprimerLivres);
-            this.grpLivresInfos.Controls.Add(this.btnModifierLivres);
-            this.grpLivresInfos.Controls.Add(this.btnAjoutLivres);
             this.grpLivresInfos.Controls.Add(this.label59);
             this.grpLivresInfos.Controls.Add(this.txbLivresIsbn);
             this.grpLivresInfos.Controls.Add(this.txbLivresImage);
@@ -267,25 +311,6 @@ namespace MediaTekDocuments.view
             this.grpLivresInfos.TabIndex = 19;
             this.grpLivresInfos.TabStop = false;
             this.grpLivresInfos.Text = "Informations détaillées";
-            // 
-            // btnModifierLivres
-            // 
-            this.btnModifierLivres.Location = new System.Drawing.Point(290, 288);
-            this.btnModifierLivres.Name = "btnModifierLivres";
-            this.btnModifierLivres.Size = new System.Drawing.Size(75, 36);
-            this.btnModifierLivres.TabIndex = 35;
-            this.btnModifierLivres.Text = "Modifier";
-            this.btnModifierLivres.UseVisualStyleBackColor = true;
-            // 
-            // btnAjoutLivres
-            // 
-            this.btnAjoutLivres.Location = new System.Drawing.Point(202, 288);
-            this.btnAjoutLivres.Name = "btnAjoutLivres";
-            this.btnAjoutLivres.Size = new System.Drawing.Size(75, 36);
-            this.btnAjoutLivres.TabIndex = 34;
-            this.btnAjoutLivres.Text = "Ajouter";
-            this.btnAjoutLivres.UseVisualStyleBackColor = true;
-            this.btnAjoutLivres.Click += new System.EventHandler(this.btnAjoutLivres_Click);
             // 
             // label59
             // 
@@ -689,7 +714,7 @@ namespace MediaTekDocuments.view
             this.tabDvd.Location = new System.Drawing.Point(4, 22);
             this.tabDvd.Margin = new System.Windows.Forms.Padding(4);
             this.tabDvd.Name = "tabDvd";
-            this.tabDvd.Size = new System.Drawing.Size(1169, 823);
+            this.tabDvd.Size = new System.Drawing.Size(1169, 855);
             this.tabDvd.TabIndex = 3;
             this.tabDvd.Text = "DVD";
             this.tabDvd.UseVisualStyleBackColor = true;
@@ -721,7 +746,7 @@ namespace MediaTekDocuments.view
             this.grpDvdInfos.Margin = new System.Windows.Forms.Padding(4);
             this.grpDvdInfos.Name = "grpDvdInfos";
             this.grpDvdInfos.Padding = new System.Windows.Forms.Padding(4);
-            this.grpDvdInfos.Size = new System.Drawing.Size(1145, 302);
+            this.grpDvdInfos.Size = new System.Drawing.Size(1145, 356);
             this.grpDvdInfos.TabIndex = 21;
             this.grpDvdInfos.TabStop = false;
             this.grpDvdInfos.Text = "Informations détaillées";
@@ -1132,7 +1157,7 @@ namespace MediaTekDocuments.view
             this.tabRevues.Margin = new System.Windows.Forms.Padding(4);
             this.tabRevues.Name = "tabRevues";
             this.tabRevues.Padding = new System.Windows.Forms.Padding(4);
-            this.tabRevues.Size = new System.Drawing.Size(1169, 823);
+            this.tabRevues.Size = new System.Drawing.Size(1169, 855);
             this.tabRevues.TabIndex = 1;
             this.tabRevues.Text = "Revues";
             this.tabRevues.UseVisualStyleBackColor = true;
@@ -1162,7 +1187,7 @@ namespace MediaTekDocuments.view
             this.grpRevuesInfos.Margin = new System.Windows.Forms.Padding(4);
             this.grpRevuesInfos.Name = "grpRevuesInfos";
             this.grpRevuesInfos.Padding = new System.Windows.Forms.Padding(4);
-            this.grpRevuesInfos.Size = new System.Drawing.Size(1145, 302);
+            this.grpRevuesInfos.Size = new System.Drawing.Size(1145, 336);
             this.grpRevuesInfos.TabIndex = 20;
             this.grpRevuesInfos.TabStop = false;
             this.grpRevuesInfos.Text = "Informations détaillées";
@@ -1549,7 +1574,7 @@ namespace MediaTekDocuments.view
             this.tabReceptionRevue.Location = new System.Drawing.Point(4, 22);
             this.tabReceptionRevue.Margin = new System.Windows.Forms.Padding(4);
             this.tabReceptionRevue.Name = "tabReceptionRevue";
-            this.tabReceptionRevue.Size = new System.Drawing.Size(1169, 823);
+            this.tabReceptionRevue.Size = new System.Drawing.Size(1169, 855);
             this.tabReceptionRevue.TabIndex = 4;
             this.tabReceptionRevue.Text = "Parutions des revues";
             this.tabReceptionRevue.UseVisualStyleBackColor = true;
@@ -1962,20 +1987,455 @@ namespace MediaTekDocuments.view
             this.btnReceptionRechercher.UseVisualStyleBackColor = true;
             this.btnReceptionRechercher.Click += new System.EventHandler(this.btnReceptionRechercher_Click);
             // 
-            // btnSupprimerLivres
+            // tabCommandeLivre
             // 
-            this.btnSupprimerLivres.Location = new System.Drawing.Point(377, 289);
-            this.btnSupprimerLivres.Name = "btnSupprimerLivres";
-            this.btnSupprimerLivres.Size = new System.Drawing.Size(89, 35);
-            this.btnSupprimerLivres.TabIndex = 36;
-            this.btnSupprimerLivres.Text = "Supprimer";
-            this.btnSupprimerLivres.UseVisualStyleBackColor = true;
+            this.tabCommandeLivre.Controls.Add(this.grpSuiviCommandeLivre);
+            this.tabCommandeLivre.Controls.Add(this.btnRechercherCommandeLivre);
+            this.tabCommandeLivre.Controls.Add(this.txbNumDocCommandeLivre);
+            this.tabCommandeLivre.Controls.Add(this.label72);
+            this.tabCommandeLivre.Controls.Add(this.grpCommandeLivreInfo);
+            this.tabCommandeLivre.Controls.Add(this.grpCommandeLivre);
+            this.tabCommandeLivre.Location = new System.Drawing.Point(4, 22);
+            this.tabCommandeLivre.Name = "tabCommandeLivre";
+            this.tabCommandeLivre.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCommandeLivre.Size = new System.Drawing.Size(1169, 855);
+            this.tabCommandeLivre.TabIndex = 5;
+            this.tabCommandeLivre.Text = "Commande de livres";
+            this.tabCommandeLivre.UseVisualStyleBackColor = true;
+            this.tabCommandeLivre.Enter += new System.EventHandler(this.tabCommandeLivre_Enter);
+            // 
+            // grpSuiviCommandeLivre
+            // 
+            this.grpSuiviCommandeLivre.Controls.Add(this.btnSupprimerCommandeLivre);
+            this.grpSuiviCommandeLivre.Controls.Add(this.btnMAJSuiviCommandeLivre);
+            this.grpSuiviCommandeLivre.Controls.Add(this.label73);
+            this.grpSuiviCommandeLivre.Controls.Add(this.cbxEtatCommandeLivre);
+            this.grpSuiviCommandeLivre.Controls.Add(this.dgvListeLivresCom);
+            this.grpSuiviCommandeLivre.Location = new System.Drawing.Point(15, 645);
+            this.grpSuiviCommandeLivre.Name = "grpSuiviCommandeLivre";
+            this.grpSuiviCommandeLivre.Size = new System.Drawing.Size(1125, 180);
+            this.grpSuiviCommandeLivre.TabIndex = 27;
+            this.grpSuiviCommandeLivre.TabStop = false;
+            this.grpSuiviCommandeLivre.Text = "Suivi des commandes";
+            // 
+            // btnSupprimerCommandeLivre
+            // 
+            this.btnSupprimerCommandeLivre.Location = new System.Drawing.Point(825, 95);
+            this.btnSupprimerCommandeLivre.Name = "btnSupprimerCommandeLivre";
+            this.btnSupprimerCommandeLivre.Size = new System.Drawing.Size(110, 23);
+            this.btnSupprimerCommandeLivre.TabIndex = 24;
+            this.btnSupprimerCommandeLivre.Text = "Supprimer";
+            this.btnSupprimerCommandeLivre.UseVisualStyleBackColor = true;
+            this.btnSupprimerCommandeLivre.Click += new System.EventHandler(this.btnSupprimerCommandeLivre_Click);
+            // 
+            // btnMAJSuiviCommandeLivre
+            // 
+            this.btnMAJSuiviCommandeLivre.Location = new System.Drawing.Point(803, 62);
+            this.btnMAJSuiviCommandeLivre.Name = "btnMAJSuiviCommandeLivre";
+            this.btnMAJSuiviCommandeLivre.Size = new System.Drawing.Size(151, 27);
+            this.btnMAJSuiviCommandeLivre.TabIndex = 23;
+            this.btnMAJSuiviCommandeLivre.Text = "Mettre à jour";
+            this.btnMAJSuiviCommandeLivre.UseVisualStyleBackColor = true;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(721, 34);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(141, 17);
+            this.label73.TabIndex = 22;
+            this.label73.Text = "Etat de la commande";
+            // 
+            // cbxEtatCommandeLivre
+            // 
+            this.cbxEtatCommandeLivre.FormattingEnabled = true;
+            this.cbxEtatCommandeLivre.Location = new System.Drawing.Point(901, 27);
+            this.cbxEtatCommandeLivre.Name = "cbxEtatCommandeLivre";
+            this.cbxEtatCommandeLivre.Size = new System.Drawing.Size(121, 24);
+            this.cbxEtatCommandeLivre.TabIndex = 21;
+            // 
+            // dgvListeLivresCom
+            // 
+            this.dgvListeLivresCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListeLivresCom.Location = new System.Drawing.Point(11, 24);
+            this.dgvListeLivresCom.Name = "dgvListeLivresCom";
+            this.dgvListeLivresCom.RowHeadersWidth = 51;
+            this.dgvListeLivresCom.RowTemplate.Height = 24;
+            this.dgvListeLivresCom.Size = new System.Drawing.Size(677, 150);
+            this.dgvListeLivresCom.TabIndex = 20;
+            // 
+            // btnRechercherCommandeLivre
+            // 
+            this.btnRechercherCommandeLivre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechercherCommandeLivre.Location = new System.Drawing.Point(376, 28);
+            this.btnRechercherCommandeLivre.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRechercherCommandeLivre.Name = "btnRechercherCommandeLivre";
+            this.btnRechercherCommandeLivre.Size = new System.Drawing.Size(128, 27);
+            this.btnRechercherCommandeLivre.TabIndex = 25;
+            this.btnRechercherCommandeLivre.Text = "Rechercher";
+            this.btnRechercherCommandeLivre.UseVisualStyleBackColor = true;
+            this.btnRechercherCommandeLivre.Click += new System.EventHandler(this.btnRechercherCommandeLivre_Click);
+            // 
+            // txbNumDocCommandeLivre
+            // 
+            this.txbNumDocCommandeLivre.Location = new System.Drawing.Point(259, 31);
+            this.txbNumDocCommandeLivre.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNumDocCommandeLivre.Name = "txbNumDocCommandeLivre";
+            this.txbNumDocCommandeLivre.Size = new System.Drawing.Size(88, 22);
+            this.txbNumDocCommandeLivre.TabIndex = 24;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.Location = new System.Drawing.Point(12, 33);
+            this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(239, 17);
+            this.label72.TabIndex = 23;
+            this.label72.Text = "Saisir un numéro de document :";
+            // 
+            // grpCommandeLivreInfo
+            // 
+            this.grpCommandeLivreInfo.Controls.Add(this.label60);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreCodeISBN);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreUrlImage);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreRayon);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivrePublic);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreGenre);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreCollection);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreAuteur);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreTitre);
+            this.grpCommandeLivreInfo.Controls.Add(this.txbCommandeLivreNumDoc);
+            this.grpCommandeLivreInfo.Controls.Add(this.label61);
+            this.grpCommandeLivreInfo.Controls.Add(this.pcbCommandeLivreImage);
+            this.grpCommandeLivreInfo.Controls.Add(this.label62);
+            this.grpCommandeLivreInfo.Controls.Add(this.label63);
+            this.grpCommandeLivreInfo.Controls.Add(this.label66);
+            this.grpCommandeLivreInfo.Controls.Add(this.label67);
+            this.grpCommandeLivreInfo.Controls.Add(this.label68);
+            this.grpCommandeLivreInfo.Controls.Add(this.label69);
+            this.grpCommandeLivreInfo.Controls.Add(this.label70);
+            this.grpCommandeLivreInfo.Controls.Add(this.label71);
+            this.grpCommandeLivreInfo.Location = new System.Drawing.Point(15, 102);
+            this.grpCommandeLivreInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.grpCommandeLivreInfo.Name = "grpCommandeLivreInfo";
+            this.grpCommandeLivreInfo.Padding = new System.Windows.Forms.Padding(4);
+            this.grpCommandeLivreInfo.Size = new System.Drawing.Size(1145, 345);
+            this.grpCommandeLivreInfo.TabIndex = 20;
+            this.grpCommandeLivreInfo.TabStop = false;
+            this.grpCommandeLivreInfo.Text = "Informations détaillées";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(743, 14);
+            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(61, 17);
+            this.label60.TabIndex = 33;
+            this.label60.Text = "Image :";
+            // 
+            // txbCommandeLivreCodeISBN
+            // 
+            this.txbCommandeLivreCodeISBN.Location = new System.Drawing.Point(588, 25);
+            this.txbCommandeLivreCodeISBN.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreCodeISBN.Name = "txbCommandeLivreCodeISBN";
+            this.txbCommandeLivreCodeISBN.ReadOnly = true;
+            this.txbCommandeLivreCodeISBN.Size = new System.Drawing.Size(132, 22);
+            this.txbCommandeLivreCodeISBN.TabIndex = 32;
+            // 
+            // txbCommandeLivreUrlImage
+            // 
+            this.txbCommandeLivreUrlImage.Location = new System.Drawing.Point(200, 240);
+            this.txbCommandeLivreUrlImage.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreUrlImage.Name = "txbCommandeLivreUrlImage";
+            this.txbCommandeLivreUrlImage.ReadOnly = true;
+            this.txbCommandeLivreUrlImage.Size = new System.Drawing.Size(520, 22);
+            this.txbCommandeLivreUrlImage.TabIndex = 31;
+            // 
+            // txbCommandeLivreRayon
+            // 
+            this.txbCommandeLivreRayon.Location = new System.Drawing.Point(200, 209);
+            this.txbCommandeLivreRayon.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreRayon.Name = "txbCommandeLivreRayon";
+            this.txbCommandeLivreRayon.ReadOnly = true;
+            this.txbCommandeLivreRayon.Size = new System.Drawing.Size(275, 22);
+            this.txbCommandeLivreRayon.TabIndex = 30;
+            // 
+            // txbCommandeLivrePublic
+            // 
+            this.txbCommandeLivrePublic.Location = new System.Drawing.Point(200, 178);
+            this.txbCommandeLivrePublic.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivrePublic.Name = "txbCommandeLivrePublic";
+            this.txbCommandeLivrePublic.ReadOnly = true;
+            this.txbCommandeLivrePublic.Size = new System.Drawing.Size(275, 22);
+            this.txbCommandeLivrePublic.TabIndex = 29;
+            // 
+            // txbCommandeLivreGenre
+            // 
+            this.txbCommandeLivreGenre.Location = new System.Drawing.Point(200, 148);
+            this.txbCommandeLivreGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreGenre.Name = "txbCommandeLivreGenre";
+            this.txbCommandeLivreGenre.ReadOnly = true;
+            this.txbCommandeLivreGenre.Size = new System.Drawing.Size(275, 22);
+            this.txbCommandeLivreGenre.TabIndex = 28;
+            // 
+            // txbCommandeLivreCollection
+            // 
+            this.txbCommandeLivreCollection.Location = new System.Drawing.Point(200, 117);
+            this.txbCommandeLivreCollection.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreCollection.Name = "txbCommandeLivreCollection";
+            this.txbCommandeLivreCollection.ReadOnly = true;
+            this.txbCommandeLivreCollection.Size = new System.Drawing.Size(520, 22);
+            this.txbCommandeLivreCollection.TabIndex = 27;
+            // 
+            // txbCommandeLivreAuteur
+            // 
+            this.txbCommandeLivreAuteur.Location = new System.Drawing.Point(200, 86);
+            this.txbCommandeLivreAuteur.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreAuteur.Name = "txbCommandeLivreAuteur";
+            this.txbCommandeLivreAuteur.ReadOnly = true;
+            this.txbCommandeLivreAuteur.Size = new System.Drawing.Size(275, 22);
+            this.txbCommandeLivreAuteur.TabIndex = 26;
+            // 
+            // txbCommandeLivreTitre
+            // 
+            this.txbCommandeLivreTitre.Location = new System.Drawing.Point(200, 55);
+            this.txbCommandeLivreTitre.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreTitre.Name = "txbCommandeLivreTitre";
+            this.txbCommandeLivreTitre.ReadOnly = true;
+            this.txbCommandeLivreTitre.Size = new System.Drawing.Size(520, 22);
+            this.txbCommandeLivreTitre.TabIndex = 25;
+            // 
+            // txbCommandeLivreNumDoc
+            // 
+            this.txbCommandeLivreNumDoc.Location = new System.Drawing.Point(200, 25);
+            this.txbCommandeLivreNumDoc.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCommandeLivreNumDoc.Name = "txbCommandeLivreNumDoc";
+            this.txbCommandeLivreNumDoc.ReadOnly = true;
+            this.txbCommandeLivreNumDoc.Size = new System.Drawing.Size(132, 22);
+            this.txbCommandeLivreNumDoc.TabIndex = 24;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(8, 148);
+            this.label61.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(63, 17);
+            this.label61.TabIndex = 22;
+            this.label61.Text = "Genre :";
+            // 
+            // pcbCommandeLivreImage
+            // 
+            this.pcbCommandeLivreImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcbCommandeLivreImage.Location = new System.Drawing.Point(747, 33);
+            this.pcbCommandeLivreImage.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbCommandeLivreImage.Name = "pcbCommandeLivreImage";
+            this.pcbCommandeLivreImage.Size = new System.Drawing.Size(378, 258);
+            this.pcbCommandeLivreImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbCommandeLivreImage.TabIndex = 21;
+            this.pcbCommandeLivreImage.TabStop = false;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(8, 178);
+            this.label62.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(62, 17);
+            this.label62.TabIndex = 19;
+            this.label62.Text = "Public :";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(8, 209);
+            this.label63.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(64, 17);
+            this.label63.TabIndex = 17;
+            this.label63.Text = "Rayon :";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(8, 55);
+            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(52, 17);
+            this.label66.TabIndex = 8;
+            this.label66.Text = "Titre :";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(8, 25);
+            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(172, 17);
+            this.label67.TabIndex = 5;
+            this.label67.Text = "Numéro de document :";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(8, 86);
+            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(87, 17);
+            this.label68.TabIndex = 9;
+            this.label68.Text = "Auteur(e) :";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(8, 240);
+            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(150, 17);
+            this.label69.TabIndex = 6;
+            this.label69.Text = "Chemin de l\'image :";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(8, 117);
+            this.label70.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(89, 17);
+            this.label70.TabIndex = 10;
+            this.label70.Text = "Collection :";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Location = new System.Drawing.Point(476, 25);
+            this.label71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(95, 17);
+            this.label71.TabIndex = 7;
+            this.label71.Text = "Code ISBN :";
+            // 
+            // grpCommandeLivre
+            // 
+            this.grpCommandeLivre.Controls.Add(this.btnAjoutCommandeLivre);
+            this.grpCommandeLivre.Controls.Add(this.txbCommandeLivreNbEx);
+            this.grpCommandeLivre.Controls.Add(this.lblNbExemplaire);
+            this.grpCommandeLivre.Controls.Add(this.txbCommandeLivreMontant);
+            this.grpCommandeLivre.Controls.Add(this.lblMontant);
+            this.grpCommandeLivre.Controls.Add(this.dtpCommandeLivreDate);
+            this.grpCommandeLivre.Controls.Add(this.label65);
+            this.grpCommandeLivre.Controls.Add(this.txbNumCommandeLivre);
+            this.grpCommandeLivre.Controls.Add(this.label64);
+            this.grpCommandeLivre.Location = new System.Drawing.Point(15, 468);
+            this.grpCommandeLivre.Name = "grpCommandeLivre";
+            this.grpCommandeLivre.Size = new System.Drawing.Size(547, 165);
+            this.grpCommandeLivre.TabIndex = 21;
+            this.grpCommandeLivre.TabStop = false;
+            this.grpCommandeLivre.Text = "Nouvelle commande";
+            // 
+            // btnAjoutCommandeLivre
+            // 
+            this.btnAjoutCommandeLivre.Location = new System.Drawing.Point(361, 52);
+            this.btnAjoutCommandeLivre.Name = "btnAjoutCommandeLivre";
+            this.btnAjoutCommandeLivre.Size = new System.Drawing.Size(118, 55);
+            this.btnAjoutCommandeLivre.TabIndex = 8;
+            this.btnAjoutCommandeLivre.Text = "Ajouter une commande";
+            this.btnAjoutCommandeLivre.UseVisualStyleBackColor = true;
+            this.btnAjoutCommandeLivre.Click += new System.EventHandler(this.btnAjoutCommandeLivre_Click);
+            // 
+            // txbCommandeLivreNbEx
+            // 
+            this.txbCommandeLivreNbEx.Location = new System.Drawing.Point(180, 85);
+            this.txbCommandeLivreNbEx.Name = "txbCommandeLivreNbEx";
+            this.txbCommandeLivreNbEx.Size = new System.Drawing.Size(100, 22);
+            this.txbCommandeLivreNbEx.TabIndex = 7;
+            // 
+            // lblNbExemplaire
+            // 
+            this.lblNbExemplaire.AutoSize = true;
+            this.lblNbExemplaire.Location = new System.Drawing.Point(6, 90);
+            this.lblNbExemplaire.Name = "lblNbExemplaire";
+            this.lblNbExemplaire.Size = new System.Drawing.Size(148, 17);
+            this.lblNbExemplaire.TabIndex = 6;
+            this.lblNbExemplaire.Text = "Nombre d\'exemplaires";
+            // 
+            // txbCommandeLivreMontant
+            // 
+            this.txbCommandeLivreMontant.Location = new System.Drawing.Point(180, 119);
+            this.txbCommandeLivreMontant.Name = "txbCommandeLivreMontant";
+            this.txbCommandeLivreMontant.Size = new System.Drawing.Size(100, 22);
+            this.txbCommandeLivreMontant.TabIndex = 5;
+            // 
+            // lblMontant
+            // 
+            this.lblMontant.AutoSize = true;
+            this.lblMontant.Location = new System.Drawing.Point(6, 119);
+            this.lblMontant.Name = "lblMontant";
+            this.lblMontant.Size = new System.Drawing.Size(59, 17);
+            this.lblMontant.TabIndex = 4;
+            this.lblMontant.Text = "Montant";
+            // 
+            // dtpCommandeLivreDate
+            // 
+            this.dtpCommandeLivreDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCommandeLivreDate.Location = new System.Drawing.Point(180, 30);
+            this.dtpCommandeLivreDate.Name = "dtpCommandeLivreDate";
+            this.dtpCommandeLivreDate.Size = new System.Drawing.Size(100, 22);
+            this.dtpCommandeLivreDate.TabIndex = 3;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(6, 31);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(146, 17);
+            this.label65.TabIndex = 2;
+            this.label65.Text = "Date de la commande";
+            // 
+            // txbNumCommandeLivre
+            // 
+            this.txbNumCommandeLivre.Location = new System.Drawing.Point(180, 58);
+            this.txbNumCommandeLivre.Name = "txbNumCommandeLivre";
+            this.txbNumCommandeLivre.Size = new System.Drawing.Size(100, 22);
+            this.txbNumCommandeLivre.TabIndex = 1;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(6, 63);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(151, 17);
+            this.label64.TabIndex = 0;
+            this.label64.Text = "Numéro de commande";
+            // 
+            // tabCommandeDVD
+            // 
+            this.tabCommandeDVD.Location = new System.Drawing.Point(4, 22);
+            this.tabCommandeDVD.Name = "tabCommandeDVD";
+            this.tabCommandeDVD.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCommandeDVD.Size = new System.Drawing.Size(1169, 855);
+            this.tabCommandeDVD.TabIndex = 6;
+            this.tabCommandeDVD.Text = "Commande de DVD";
+            this.tabCommandeDVD.UseVisualStyleBackColor = true;
             // 
             // FrmMediatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 849);
+            this.ClientSize = new System.Drawing.Size(1177, 881);
             this.Controls.Add(this.tabOngletsApplication);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMediatek";
@@ -2011,6 +2471,16 @@ namespace MediaTekDocuments.view
             ((System.ComponentModel.ISupportInitialize)(this.pcbReceptionExemplaireRevueImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionExemplairesListe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReceptionRevueImage)).EndInit();
+            this.tabCommandeLivre.ResumeLayout(false);
+            this.tabCommandeLivre.PerformLayout();
+            this.grpSuiviCommandeLivre.ResumeLayout(false);
+            this.grpSuiviCommandeLivre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeLivresCom)).EndInit();
+            this.grpCommandeLivreInfo.ResumeLayout(false);
+            this.grpCommandeLivreInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCommandeLivreImage)).EndInit();
+            this.grpCommandeLivre.ResumeLayout(false);
+            this.grpCommandeLivre.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2166,9 +2636,48 @@ namespace MediaTekDocuments.view
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Button btnModifierLivres;
-        private System.Windows.Forms.Button btnAjoutLivres;
-        private System.Windows.Forms.Button btnSupprimerLivres;
+        private System.Windows.Forms.TabPage tabCommandeLivre;
+        private System.Windows.Forms.TabPage tabCommandeDVD;
+        private System.Windows.Forms.GroupBox grpCommandeLivre;
+        private System.Windows.Forms.TextBox txbCommandeLivreNbEx;
+        private System.Windows.Forms.Label lblNbExemplaire;
+        private System.Windows.Forms.TextBox txbCommandeLivreMontant;
+        private System.Windows.Forms.Label lblMontant;
+        private System.Windows.Forms.DateTimePicker dtpCommandeLivreDate;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.TextBox txbNumCommandeLivre;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.DataGridView dgvListeLivresCom;
+        private System.Windows.Forms.GroupBox grpCommandeLivreInfo;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox txbCommandeLivreCodeISBN;
+        private System.Windows.Forms.TextBox txbCommandeLivreUrlImage;
+        private System.Windows.Forms.TextBox txbCommandeLivreRayon;
+        private System.Windows.Forms.TextBox txbCommandeLivrePublic;
+        private System.Windows.Forms.TextBox txbCommandeLivreGenre;
+        private System.Windows.Forms.TextBox txbCommandeLivreCollection;
+        private System.Windows.Forms.TextBox txbCommandeLivreAuteur;
+        private System.Windows.Forms.TextBox txbCommandeLivreTitre;
+        private System.Windows.Forms.TextBox txbCommandeLivreNumDoc;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.PictureBox pcbCommandeLivreImage;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox txbNumDocCommandeLivre;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Button btnRechercherCommandeLivre;
+        private System.Windows.Forms.GroupBox grpSuiviCommandeLivre;
+        private System.Windows.Forms.Button btnSupprimerCommandeLivre;
+        private System.Windows.Forms.Button btnMAJSuiviCommandeLivre;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.ComboBox cbxEtatCommandeLivre;
+        private System.Windows.Forms.Button btnAjoutCommandeLivre;
     }
 }
 

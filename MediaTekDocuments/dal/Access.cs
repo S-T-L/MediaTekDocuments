@@ -37,6 +37,9 @@ namespace MediaTekDocuments.dal
         private const string POST = "POST";
         /// <summary>
         /// méthode HTTP pour update
+        /// 
+
+        private const string DELETE = "DELETE";
 
         /// <summary>
         /// Méthode privée pour créer un singleton
@@ -69,7 +72,15 @@ namespace MediaTekDocuments.dal
             }
             return instance;
         }
-
+        /// <summary>
+        /// Retourne toutes les étapes de suivi d'une commande 
+        /// </summary>
+        /// <returns></returns>
+        public List<Suivi> GetAllSuivis()
+        {
+            IEnumerable<Suivi> lesSuivis = TraitementRecup<Suivi>(GET, "suivi",null);
+            return new List<Suivi>(lesSuivis);
+        }
         /// <summary>
         /// Retourne tous les genres à partir de la BDD
         /// </summary>
@@ -143,6 +154,9 @@ namespace MediaTekDocuments.dal
             return lesExemplaires;
         }
 
+        
+
+
         /// <summary>
         /// ecriture d'un exemplaire en base de données
         /// </summary>
@@ -157,6 +171,56 @@ namespace MediaTekDocuments.dal
                 return (liste != null);
             }
             catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Retourne toutes les commandes du document à partir de la BDD
+        /// </summary>
+        /// <param name="idDocument">id du document concernée</param>
+        /// <returns>Liste d'objets CommandeDocument</returns>
+        public List<CommandeDocument> GetCommandesDocument(string idDocument)
+        {
+            String jsonIdDocument = convertToJson("idLivreDvd", idDocument);
+            List<CommandeDocument> lesCommandesDoc = TraitementRecup<CommandeDocument>(GET, "commandedocument/" + jsonIdDocument, null);
+            return lesCommandesDoc;
+        }
+        /// <summary>
+        /// Ecriture d'une nouvelle commande de document dans la base de données
+        /// </summary>
+        /// <param name="commandeDoc">commande de document à insérer</param>
+        /// <returns>true si l'insertion a pu se faire (retour != null)</returns>
+        public bool CreerCommandeDocument(CommandeDocument commandeDoc)
+        {
+            String jsonCommandeDocument = JsonConvert.SerializeObject(commandeDoc, new CustomDateTimeConverter());
+            try
+            {
+                List<CommandeDocument> liste = TraitementRecup<CommandeDocument>(POST, "commandedocument", "champs=" + jsonCommandeDocument);
+                return (liste != null);
+            }
+            catch (Exception ex)
+            {
+                
+                
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
+
+        public bool SupprimerCommandeDocument(string idCommande)
+
+        {
+            try 
+            {
+
+                string jsonIdCommande = convertToJson("id", idCommande);
+                List<CommandeDocument> liste = TraitementRecup<CommandeDocument>(DELETE, "commandedocument/" +jsonIdCommande,null);
+                return (liste != null);
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -179,6 +243,16 @@ namespace MediaTekDocuments.dal
             {
                 JObject retour = api.RecupDistant(methode, message, parametres);
                 // extraction du code retourné
+                // Vérifier si retour est NULL
+                if (retour == null)
+                {
+                    Console.WriteLine("[ERREUR] L’API n'a pas retourné de réponse valide.");
+                    return liste;
+                }
+
+                // Debug du retour brut de l'API
+                Console.WriteLine("[DEBUG] Retour API : " + retour.ToString());
+
                 String code = (String)retour["code"];
                 if (code.Equals("200"))
                 {
@@ -193,10 +267,13 @@ namespace MediaTekDocuments.dal
                 else
                 {
                     Console.WriteLine("code erreur = " + code + " message = " + (String)retour["message"]);
+                    Console.WriteLine("Requête envoyée : " + message + " | " + parametres);
                 }
             }catch(Exception e)
             {
-                Console.WriteLine("Erreur lors de l'accès à l'API : "+e.Message);
+                
+                Console.WriteLine("Erreur lors de l'accès à l'API : " + e.Message);
+                Console.WriteLine("Requête envoyée : " + message + " | " + parametres);
                 Environment.Exit(0);
             }
             return liste;
