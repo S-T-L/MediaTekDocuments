@@ -21,7 +21,14 @@ namespace MediaTekDocuments.controller
         {
             access = Access.GetInstance();
         }
-
+        /// <summary>
+        /// Getter sur les suivis
+        /// </summary>
+        /// <returns>Liste de suivis</returns>
+        public List<Suivi> GetAllSuivis()
+        {
+            return access.GetAllSuivis();
+        }
         /// <summary>
         /// getter sur la liste des genres
         /// </summary>
@@ -96,5 +103,31 @@ namespace MediaTekDocuments.controller
         {
             return access.CreerExemplaire(exemplaire);
         }
+
+        /// <summary>
+        /// récupère les commandes d'un document
+        /// </summary>
+        /// <returns>Liste d'objets CommandeDocument</returns>
+        public List<CommandeDocument> GetCommandesDocument(string idDocument)
+        {
+            return access.GetCommandesDocument(idDocument);
+        }
+
+        /// <summary>
+        /// Crée une nouvelle commande de document dans la bdd
+        /// </summary>
+        /// <param name="commandeDoc">commande de document concerné</param>
+        /// <returns>True si la création a pu se faire</returns>
+        public bool CreerCommandeDocument(CommandeDocument commandeDoc)
+        {
+            return access.CreerCommandeDocument(commandeDoc);
+        }
+
+        public bool SupprimerCommandeDocument(string idCommande)
+        {
+            return access.SupprimerCommandeDocument(idCommande);
+        }
+
+
     }
 }
