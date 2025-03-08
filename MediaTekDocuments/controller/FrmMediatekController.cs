@@ -113,6 +113,7 @@ namespace MediaTekDocuments.controller
             return access.GetCommandesDocument(idDocument);
         }
 
+       
         /// <summary>
         /// Crée une nouvelle commande de document dans la bdd
         /// </summary>
@@ -121,6 +122,11 @@ namespace MediaTekDocuments.controller
         public bool CreerCommandeDocument(CommandeDocument commandeDoc)
         {
             return access.CreerCommandeDocument(commandeDoc);
+        }
+
+        public bool ModiferCommandeDocument(CommandeDocument commandeDocument)
+        {
+            return access.ModifierCommandeDocument(commandeDocument);
         }
 
         public bool SupprimerCommandeDocument(string idCommande)

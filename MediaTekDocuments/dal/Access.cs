@@ -39,6 +39,8 @@ namespace MediaTekDocuments.dal
         /// méthode HTTP pour update
         /// 
 
+        private const string PUT = "PUT";
+
         private const string DELETE = "DELETE";
 
         /// <summary>
@@ -177,6 +179,7 @@ namespace MediaTekDocuments.dal
             return false;
         }
 
+
         /// <summary>
         /// Retourne toutes les commandes du document à partir de la BDD
         /// </summary>
@@ -209,7 +212,34 @@ namespace MediaTekDocuments.dal
             }
             return false;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="commandeDocument"></param>
+        /// <returns></returns>
+        public bool ModifierCommandeDocument(CommandeDocument commandeDocument)
+        {
+            //String jsonCommandeDocument = JsonConvert.SerializeObject(commandeDocument.Id, new CustomDateTimeConverter());
+            try
+            {
+                
+                string jsonCommandeIdSuivi = convertToJson("idSuivi", commandeDocument.IdSuivi);
+                List<CommandeDocument> liste = TraitementRecup<CommandeDocument>(PUT, "commandedocument/"+commandeDocument.Id,"champs=" + jsonCommandeIdSuivi);
+                return (liste != null);
+            }
+            catch (Exception ex)
+            {
 
+
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
+        /// <summary>
+        /// Suppression d'une commande
+        /// </summary>
+        /// <param name="idCommande"></param>
+        /// <returns></returns>
         public bool SupprimerCommandeDocument(string idCommande)
 
         {
