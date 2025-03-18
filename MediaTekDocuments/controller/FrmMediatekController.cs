@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using MediaTekDocuments.model;
 using MediaTekDocuments.dal;
+using System;
+using System.Linq;
 
 namespace MediaTekDocuments.controller
 {
@@ -83,15 +85,43 @@ namespace MediaTekDocuments.controller
             return access.GetAllPublics();
         }
 
+        public List<Abonnement> GetAbonnementsExpirants()
+        {
+            List<Abonnement> abonnementsExpirants = new List<Abonnement>();
+            List<Revue> revues = GetAllRevues();
 
-        /// <summary>
-        /// récupère les exemplaires d'une revue
-        /// </summary>
-        /// <param name="idDocuement">id de la revue concernée</param>
-        /// <returns>Liste d'objets Exemplaire</returns>
-        public List<Exemplaire> GetExemplairesRevue(string idDocuement)
+            foreach (Revue revue in revues)
+            {
+                List<Abonnement> abonnements = GetAbonnementsRevue(revue.Id);
+                var expirants = abonnements.Where(o =>
+                    o.DateFinAbonnement <= DateTime.Now.AddMonths(1) &&
+                    o.DateFinAbonnement >= DateTime.Now).ToList();
+
+                abonnementsExpirants.AddRange(expirants);
+            }
+
+            return abonnementsExpirants;
+        }
+
+    public List<Commande> GetAllCommandes()
+        {
+            return access.GetAllCommandes();
+        }
+    
+
+    /// <summary>
+    /// récupère les exemplaires d'une revue
+    /// </summary>
+    /// <param name="idDocuement">id de la revue concernée</param>
+    /// <returns>Liste d'objets Exemplaire</returns>
+    public List<Exemplaire> GetExemplairesRevue(string idDocuement)
         {
             return access.GetExemplairesRevue(idDocuement);
+        }
+
+        public List<Abonnement> GetAbonnementsRevue(string idRevue)
+        {
+            return access.GetAbonnementsRevue(idRevue);
         }
 
         /// <summary>
@@ -103,6 +133,12 @@ namespace MediaTekDocuments.controller
         {
             return access.CreerExemplaire(exemplaire);
         }
+
+        public bool CreerAbonnement (Abonnement abonnementRevue)
+        {
+            return access.CreerAbonnement(abonnementRevue);
+        }
+        
 
         /// <summary>
         /// récupère les commandes d'un document
@@ -133,7 +169,11 @@ namespace MediaTekDocuments.controller
         {
             return access.SupprimerCommandeDocument(idCommande);
         }
+         public bool SupprimerAbonnementRevue (string idAbonnement)
+        {
 
+            return access.SupprimerCommandeRevue(idAbonnement);
+        }
 
     }
 }

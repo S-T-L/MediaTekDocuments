@@ -35,12 +35,14 @@ namespace MediaTekDocuments.dal
         /// méthode HTTP pour insert
         /// </summary>
         private const string POST = "POST";
+       
         /// <summary>
-        /// méthode HTTP pour update
-        /// 
-
+        /// méthode http pour update
+        /// </summary>
         private const string PUT = "PUT";
-
+        /// <summary>
+        /// méthode HTTP pour delete
+        /// </summary>
         private const string DELETE = "DELETE";
 
         /// <summary>
@@ -143,6 +145,11 @@ namespace MediaTekDocuments.dal
             return lesRevues;
         }
 
+        public List<Commande> GetAllCommandes()
+        {
+            List<Commande> lesCommandes = TraitementRecup<Commande>(GET, "commande", null);
+            return lesCommandes;
+        }
 
         /// <summary>
         /// Retourne les exemplaires d'une revue
@@ -155,8 +162,34 @@ namespace MediaTekDocuments.dal
             List<Exemplaire> lesExemplaires = TraitementRecup<Exemplaire>(GET, "exemplaire/" + jsonIdDocument, null);
             return lesExemplaires;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idRevue"></param>
+        /// <returns></returns>
+        public List<Abonnement> GetAbonnementsRevue(string idRevue)
+        {
+            String jsonAbonnementidRevue = convertToJson("idRevue", idRevue);
+            List<Abonnement> lesAbonnements = TraitementRecup<Abonnement>(GET, "abonnement/" + jsonAbonnementidRevue, null);
+            return lesAbonnements;
+        }
+        /// <summary>
+        /// recherche de l'utilisateur
+        /// </summary>
+        /// <param name="nomUtilisateur"></param>
+        /// <returns></returns>
+        public Utilisateur GetAuthentification(string loginUtilisateur)
+        {
+            String jsonAuthentifNomUtil = convertToJson("login", loginUtilisateur);
+            List<Utilisateur> utilisateurs = TraitementRecup<Utilisateur>(GET, "utilisateur/" + jsonAuthentifNomUtil, null);
 
-        
+            // Retourner le premier utilisateur de la liste ou null si aucun n'est trouvé
+            if (utilisateurs != null && utilisateurs.Count > 0)
+            {
+                return utilisateurs[0];
+            }
+            return null;
+        }
 
 
         /// <summary>
@@ -181,16 +214,18 @@ namespace MediaTekDocuments.dal
 
 
         /// <summary>
-        /// Retourne toutes les commandes du document à partir de la BDD
+        /// récupère les commandes pour un livre ou un dvd
         /// </summary>
-        /// <param name="idDocument">id du document concernée</param>
-        /// <returns>Liste d'objets CommandeDocument</returns>
+        /// <param name="idDocument"></param>
+        /// <returns>Liste d'objet CommandeDocument</returns>
         public List<CommandeDocument> GetCommandesDocument(string idDocument)
         {
             String jsonIdDocument = convertToJson("idLivreDvd", idDocument);
             List<CommandeDocument> lesCommandesDoc = TraitementRecup<CommandeDocument>(GET, "commandedocument/" + jsonIdDocument, null);
             return lesCommandesDoc;
         }
+
+
         /// <summary>
         /// Ecriture d'une nouvelle commande de document dans la base de données
         /// </summary>
@@ -215,11 +250,32 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="abonnementRevue"></param>
+        /// <returns></returns>
+        public bool CreerAbonnement(Abonnement abonnementRevue)
+        {
+            String jsonAbonnementRevue = JsonConvert.SerializeObject(abonnementRevue, new CustomDateTimeConverter());
+            try
+            {
+                List<Abonnement> listeAbo = TraitementRecup<Abonnement>(POST, "abonnement", "champs=" + jsonAbonnementRevue);
+                return (listeAbo != null);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
+
+        
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="commandeDocument"></param>
         /// <returns></returns>
         public bool ModifierCommandeDocument(CommandeDocument commandeDocument)
         {
-            //String jsonCommandeDocument = JsonConvert.SerializeObject(commandeDocument.Id, new CustomDateTimeConverter());
+            
             try
             {
                 
@@ -251,6 +307,25 @@ namespace MediaTekDocuments.dal
                 return (liste != null);
             }
             catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idAbonnement"></param>
+        /// <returns></returns>
+        public bool SupprimerCommandeRevue(string idAbonnement)
+        {
+            try
+            {
+                string jsonIdAbonnement = convertToJson("id", idAbonnement);
+                List<Abonnement> liste = TraitementRecup<Abonnement>(DELETE, "abonnement/" + jsonIdAbonnement, null);
+                return (liste != null);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

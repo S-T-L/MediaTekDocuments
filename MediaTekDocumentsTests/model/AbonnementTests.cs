@@ -1,0 +1,47 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MediaTekDocuments.model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MediaTekDocuments.model.Tests
+{
+    [TestClass()]
+    public class AbonnementTests
+    {
+        
+
+        readonly Abonnement abonnement = new Abonnement("1", new DateTime(2025, 3, 1), 10, new DateTime(2025, 4, 1), null);
+        DateTime dateCommande = new DateTime(2025, 3, 1);
+        DateTime dateFinAbonnement = new DateTime(2025, 4, 1);
+        
+
+        [TestMethod()]
+
+        public void ParutionDansAbonnementTest()
+        {
+            // Cas 1: La date de parution est exactement la date de commande
+          
+            Assert.AreEqual(false, abonnement.ParutionDansAbonnement(dateCommande, dateFinAbonnement, new DateTime(2025, 4, 1)), "La date de parution ne doit pas être égale à la date de commande");
+
+            // Cas 2: La date de parution est exactement la date de fin d'abonnement
+            
+            Assert.AreEqual(false, abonnement.ParutionDansAbonnement(dateCommande, dateFinAbonnement, new DateTime(2025, 5, 1)), "La date de parution ne doit pas être égale à la date de fin d'abonnement");
+
+            // Cas 3: La date de parution est entre la date de commande et la date de fin d'abonnement
+            
+            Assert.AreEqual(true, abonnement.ParutionDansAbonnement(dateCommande, dateFinAbonnement, new DateTime(2025, 3, 15)), "La date de parution devrait être valide, car elle est entre les deux dates");
+
+            // Cas 4: La date de parution est avant la date de commande
+            
+            Assert.AreEqual(false, abonnement.ParutionDansAbonnement(dateCommande, dateFinAbonnement, new DateTime(2025, 2, 28)), "La date de parution devrait être invalide, car elle est avant la date de commande");
+
+            // Cas 5: La date de parution est après la date de fin d'abonnement
+         
+            Assert.AreEqual(false, abonnement.ParutionDansAbonnement(dateCommande, dateFinAbonnement, new DateTime(2025, 5, 2)), "La date de parution devrait être invalide, car elle est après la date de fin d'abonnement");
+        }
+
+    }
+}
