@@ -39,9 +39,10 @@ namespace MediaTekDocuments.view
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.Location = new System.Drawing.Point(93, 206);
+            this.btnSeConnecter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeConnecter.Location = new System.Drawing.Point(51, 285);
             this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(124, 34);
+            this.btnSeConnecter.Size = new System.Drawing.Size(165, 42);
             this.btnSeConnecter.TabIndex = 0;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
@@ -49,51 +50,58 @@ namespace MediaTekDocuments.view
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 91);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(53, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 22);
+            this.label1.Size = new System.Drawing.Size(189, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nom d\'utilisateur";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 144);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(53, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.Size = new System.Drawing.Size(170, 26);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mot de passe";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(111, 19);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(53, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 17);
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(170, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "CONNEXION";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txbNomUtilisateur
             // 
-            this.txbNomUtilisateur.Location = new System.Drawing.Point(189, 91);
+            this.txbNomUtilisateur.Location = new System.Drawing.Point(58, 109);
+            this.txbNomUtilisateur.Multiline = true;
             this.txbNomUtilisateur.Name = "txbNomUtilisateur";
-            this.txbNomUtilisateur.Size = new System.Drawing.Size(100, 22);
+            this.txbNomUtilisateur.Size = new System.Drawing.Size(165, 29);
             this.txbNomUtilisateur.TabIndex = 4;
+            this.txbNomUtilisateur.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbNomUtilisateur.TextChanged += new System.EventHandler(this.txbNomUtilisateur_TextChanged);
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(189, 144);
+            this.txbPassword.Location = new System.Drawing.Point(51, 206);
+            this.txbPassword.Multiline = true;
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(100, 22);
+            this.txbPassword.PasswordChar = '*';
+            this.txbPassword.Size = new System.Drawing.Size(172, 30);
             this.txbPassword.TabIndex = 5;
             // 
             // FrmAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 313);
+            this.ClientSize = new System.Drawing.Size(306, 363);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.txbNomUtilisateur);
             this.Controls.Add(this.label3);

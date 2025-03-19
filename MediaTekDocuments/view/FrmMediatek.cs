@@ -1324,10 +1324,11 @@ namespace MediaTekDocuments.view
             RemplirComboSuivi(controller.GetAllSuivis(), bdgDocCommandeSuivi, cbxEtatCommandeLivre);
             ModifEnCoursComLivre(false, false);
         }
-        /// <summary>
-        /// Gestion de l'affichage : true modif en cours
-        /// </summary>
-        /// <param name="modif"></param>
+      /// <summary>
+      /// gère l'affichage selon si modification en cours et si commande trouvée
+      /// </summary>
+      /// <param name="modif"></param>
+      /// <param name="commandeTrouve"></param>
         private void ModifEnCoursComLivre(bool modif, bool commandeTrouve)
         {
 
@@ -1358,13 +1359,13 @@ namespace MediaTekDocuments.view
         /// Remplit le datagrid qui liste les commandes avec la liste reçue en paramètre
         /// </summary>
         /// <param name="commandesDoc">liste de commandes de document</param>
-        private void RemplirCommandesDocListe(List<CommandeDocument> commandesDoc)
+        private void RemplirDgvCommandesLivres(List<CommandeDocument> commandesDoc)
         {
             if (commandesDoc != null)
             {
                 bdgLivreCommandesListe.DataSource = commandesDoc;
                 dgvListeLivresCom.DataSource = bdgLivreCommandesListe;
-                //dgvListeLivresCom.DataSource = bdgCommandes;
+
                 dgvListeLivresCom.Columns["id"].Visible = false;
                 dgvListeLivresCom.Columns["idLivreDvd"].Visible = false;
                 dgvListeLivresCom.Columns["idSuivi"].Visible = false;
@@ -1395,13 +1396,15 @@ namespace MediaTekDocuments.view
         /// <param name="e"></param>
         private void btnRechercherCommandeLivre_Click(object sender, EventArgs e)
         {
-            if (!txbNumDocCommandeLivre.Text.Equals(""))
+            if (!string.IsNullOrWhiteSpace(txbNumDocCommandeLivre.Text))
+
             {
+                // recherche un livre correspondant à l'id saisi
                 Livre livre = lesLivres.Find(x => x.Id.Equals(txbNumDocCommandeLivre.Text));
                 if (livre != null)
                 {
+                    //affichage de ses informations
                     AfficheInfosLivreRecherche(livre);
-                    //ModifEnCoursComLivre(true);
                     dgvListeLivresCom.ClearSelection();
                     cbxEtatCommandeLivre.SelectedIndex = 0;
                 }
@@ -1416,7 +1419,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Affichage des informations du livre recherché
         /// </summary>
-        /// <param name="livre"></param>
+        /// <param name="livre">Objet livre contenant les informations de celui ci</param>
         private void AfficheInfosLivreRecherche(Livre livre)
         {
             txbNumDocCommandeLivre.Text = livre.Id;
@@ -1439,7 +1442,6 @@ namespace MediaTekDocuments.view
             }
             // affiche la liste des commandes du livre
             AfficheLivreCommandes();
-
         }
 
         /// <summary>
@@ -1448,8 +1450,10 @@ namespace MediaTekDocuments.view
         private void AfficheLivreCommandes()
         {
             string idDocument = txbNumDocCommandeLivre.Text;
+            //Appel au controleur pour récupérer les commandes liées à ce livre
             lesCommandesDocument = controller.GetCommandesDocument(idDocument);
-            RemplirCommandesDocListe(lesCommandesDocument);
+            RemplirDgvCommandesLivres(lesCommandesDocument);
+            // Si des commandes existent
             if (lesCommandesDocument.Count > 0)
             {
                 ModifEnCoursComLivre(true, true);
@@ -1459,17 +1463,33 @@ namespace MediaTekDocuments.view
                 MessageBox.Show("Aucune commande trouvée pour ce livre");
                 ModifEnCoursComLivre(true, false);
             }
-
-
-
-
         }
-        /// <summary>
-        /// Vérifie que les champs obligatoires sont remplis et contiennent des valeurs valides
+
+        /// <summary>peu
+        /// vérifie si l'identifiant renseigné existe déja
         /// </summary>
-        /// <param name="commandeId">Identifiant de la commande</param>
-        /// <param name="nbExemplaire">Nombre d'exemplaires (texte)</param>
-        /// <param name="montant">Montant (texte)</param>
+        /// <param name="id">identifiant de la commande</param>
+        /// <returns>true si la commande existe, sinon false</returns>
+        private bool CommandeExistante(string id)
+        {
+            List<Commande> commandesExistantes = controller.GetAllCommandes();
+            if (commandesExistantes.Any(c => c.Id == id))
+            {
+                MessageBox.Show("Une commande avec ce numéro existe déjà", "Erreur");
+                //si commande existe
+                return true;
+            }
+            //si elle n'existe pas
+            return false;
+        }
+
+        /// <summary>
+        /// Vérifie que les champs sont correctement renseignés
+        /// </summary>
+        /// <param name="commandeId"></param>
+        /// <param name="nbExemplaire"></param>
+        /// <param name="montant"></param>
+        /// <param name="dateCommande"></param>
         /// <returns>True si tous les champs sont valides, sinon False</returns>
         private bool VerifierChampsCommande(string commandeId, string nbExemplaire, string montant, DateTime dateCommande)
         {
@@ -1491,8 +1511,6 @@ namespace MediaTekDocuments.view
                 MessageBox.Show("Le montant est obligatoire", "Information");
                 return false;
             }
-
-
 
             // Vérification des formats numériques
             if (!int.TryParse(nbExemplaire, out int nbEx) || nbEx <= 0)
@@ -1521,47 +1539,39 @@ namespace MediaTekDocuments.view
         /// <param name="e"></param>
         private void btnAjoutCommandeLivre_Click(object sender, EventArgs e)
         {
+            // vérification des champs remplis
             if (!VerifierChampsCommande(txbNumCommandeLivre.Text, txbCommandeLivreNbEx.Text, txbCommandeLivreMontant.Text, dtpCommandeLivreDate.Value))
             {
                 return;
-
             }
-
+            // Vérification du suivi
             Suivi suivi = (Suivi)cbxEtatCommandeLivre.SelectedItem;
             if (suivi.Id != 1)
             {
                 MessageBox.Show("Une nouvelle commande ne peut être créée qu'avec un état en cours");
                 return;
-
             }
-
             try
             {
                 string id = txbNumCommandeLivre.Text;
                 string idLivreDvd = txbNumDocCommandeLivre.Text;
-
 
                 // Si numero de commande existant déja
                 if (CommandeExistante(id))
                 {
                     txbAbonnementNumCommande.Focus();
                     return;
-
                 }
-
-
                 int nbExemplaire = int.Parse(txbCommandeLivreNbEx.Text);
                 DateTime dateCommande = dtpCommandeLivreDate.Value;
-
                 int idSuivi = suivi.Id;
                 string libelleSuivi = suivi.Libelle;
                 double montant = double.Parse(txbCommandeLivreMontant.Text);
-
+                //Création
                 CommandeDocument commandeDocument = new CommandeDocument(
                     id, dateCommande, montant, nbExemplaire,
                     idLivreDvd, idSuivi, libelleSuivi
                 );
-
                 if (controller.CreerCommandeDocument(commandeDocument))
                 {
                     AfficheLivreCommandes();
@@ -1591,23 +1601,27 @@ namespace MediaTekDocuments.view
             //utilisation de linq pour filtrer directement tous les txtbox dans grpCommandeLivreInfo
             grpCommandeLivreInfo.Controls.OfType<TextBox>().ToList().ForEach(txt => txt.Clear());
         }
-
+        /// <summary>
+        /// Suppression d'une commande de livre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimerCommandeLivre_Click(object sender, EventArgs e)
         {
 
             CommandeDocument commandeDocument = (CommandeDocument)bdgLivreCommandesListe[bdgLivreCommandesListe.Position];
             if (dgvListeLivresCom.CurrentCell != null)
             {
+                // vérifie si la commande est livrée ou réglée
                 if (commandeDocument.IdSuivi > 2)
                     MessageBox.Show("Une commande livrée ou réglée ne peut etre supprimée");
                 else if (MessageBox.Show("Voulez vous supprimer la commande " + commandeDocument.Id + " pour le livre " + lesLivres.Find(o => o.Id == commandeDocument.IdLivreDvd).Titre + " ?",
                     "Validation suppresion", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    //appel au controleur
                     if (controller.SupprimerCommandeDocument(commandeDocument.Id))
                     {
-
                         AfficheLivreCommandes();
-
                     }
                     else
                     {
@@ -1652,16 +1666,19 @@ namespace MediaTekDocuments.view
         }
 
 
-
+        /// <summary>
+        /// Modification de l'état d'une commande si son suivi actuel le permet
+        /// </summary>
         private void ModifierSuiviCommandeLivre()
         {
+            // ligne sélectionnée
             if (dgvListeLivresCom.CurrentRow != null)
-            {
+            {               
                 CommandeDocument commandeDocument = (CommandeDocument)bdgLivreCommandesListe[bdgLivreCommandesListe.Position];
+                //récupération du suivi sélectionné par l'utilisateur dans le cbx
                 Suivi nouvelEtat = (Suivi)cbxEtatCommandeLivre.SelectedItem;
 
-
-
+                //Vérification des états de suivi
                 if (commandeDocument.IdSuivi >= 3)
                 {
                     MessageBox.Show("Une commande livrée ou réglée ne peut pas revenir en arrière.", "Modification impossible");
@@ -1686,6 +1703,8 @@ namespace MediaTekDocuments.view
                 }
             }
         }
+
+
         /// <summary>
         /// Clic sur le bouton modifier / Gestion de l'état de la commande
         /// </summary>
@@ -1695,6 +1714,8 @@ namespace MediaTekDocuments.view
         {
             ModifierSuiviCommandeLivre();
         }
+
+
         /// <summary>
         /// Gestion des tris dans le dgv
         /// </summary>
@@ -2166,18 +2187,7 @@ namespace MediaTekDocuments.view
             return true;
         }
 
-        private bool CommandeExistante(string id)
-        {
-            List<Commande> commandesExistantes = controller.GetAllCommandes();
-            if (commandesExistantes.Any(c => c.Id == id))
-            {
-                MessageBox.Show("Une commande avec ce numéro existe déjà", "Erreur");
-                //si commande existe
-                return true; 
-            }
-            //si elle n'existe pas
-            return false; 
-        }
+     
 
 
 
@@ -2201,7 +2211,7 @@ namespace MediaTekDocuments.view
                 {
                     txbAbonnementNumCommande.Focus();
                     return;
-                    
+
                 }
                 DateTime dateCommande = dtpAbonnementDate.Value;
                 DateTime dateFin = dtpDateFinAbonnement.Value;
