@@ -42,5 +42,9 @@ namespace MediaTekDocuments.view
             }
         }
 
+        private void txbNomUtilisateur_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

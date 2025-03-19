@@ -35,7 +35,7 @@ namespace MediaTekDocuments.dal
         /// méthode HTTP pour insert
         /// </summary>
         private const string POST = "POST";
-       
+
         /// <summary>
         /// méthode http pour update
         /// </summary>
@@ -70,7 +70,7 @@ namespace MediaTekDocuments.dal
         /// <returns>instance unique de la classe</returns>
         public static Access GetInstance()
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = new Access();
             }
@@ -82,7 +82,7 @@ namespace MediaTekDocuments.dal
         /// <returns></returns>
         public List<Suivi> GetAllSuivis()
         {
-            IEnumerable<Suivi> lesSuivis = TraitementRecup<Suivi>(GET, "suivi",null);
+            IEnumerable<Suivi> lesSuivis = TraitementRecup<Suivi>(GET, "suivi", null);
             return new List<Suivi>(lesSuivis);
         }
         /// <summary>
@@ -241,12 +241,13 @@ namespace MediaTekDocuments.dal
             }
             catch (Exception ex)
             {
-                
-                
                 Console.WriteLine(ex.Message);
             }
             return false;
         }
+
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -267,20 +268,18 @@ namespace MediaTekDocuments.dal
             return false;
         }
 
-        
+
         /// <summary>
-        /// 
+        /// Modification du suivi d'une commande
         /// </summary>
         /// <param name="commandeDocument"></param>
-        /// <returns></returns>
+        /// <returns>true si modification effectuée</returns>
         public bool ModifierCommandeDocument(CommandeDocument commandeDocument)
         {
-            
             try
             {
-                
                 string jsonCommandeIdSuivi = convertToJson("idSuivi", commandeDocument.IdSuivi);
-                List<CommandeDocument> liste = TraitementRecup<CommandeDocument>(PUT, "commandedocument/"+commandeDocument.Id,"champs=" + jsonCommandeIdSuivi);
+                List<CommandeDocument> liste = TraitementRecup<CommandeDocument>(PUT, "commandedocument/" + commandeDocument.Id, "champs=" + jsonCommandeIdSuivi);
                 return (liste != null);
             }
             catch (Exception ex)
@@ -291,27 +290,28 @@ namespace MediaTekDocuments.dal
             }
             return false;
         }
+
         /// <summary>
         /// Suppression d'une commande
         /// </summary>
         /// <param name="idCommande"></param>
         /// <returns></returns>
         public bool SupprimerCommandeDocument(string idCommande)
-
         {
-            try 
+            try
             {
-
                 string jsonIdCommande = convertToJson("id", idCommande);
-                List<CommandeDocument> liste = TraitementRecup<CommandeDocument>(DELETE, "commandedocument/" +jsonIdCommande,null);
+                List<CommandeDocument> liste = TraitementRecup<CommandeDocument>(DELETE, "commandedocument/" + jsonIdCommande, null);
                 return (liste != null);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
             return false;
         }
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -340,7 +340,7 @@ namespace MediaTekDocuments.dal
         /// <param name="message">information envoyée dans l'url</param>
         /// <param name="parametres">paramètres à envoyer dans le body, au format "chp1=val1&chp2=val2&..."</param>
         /// <returns>liste d'objets récupérés (ou liste vide)</returns>
-        private List<T> TraitementRecup<T> (String methode, String message, String parametres)
+        private List<T> TraitementRecup<T>(String methode, String message, String parametres)
         {
             // trans
             List<T> liste = new List<T>();
@@ -374,9 +374,10 @@ namespace MediaTekDocuments.dal
                     Console.WriteLine("code erreur = " + code + " message = " + (String)retour["message"]);
                     Console.WriteLine("Requête envoyée : " + message + " | " + parametres);
                 }
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                
+
                 Console.WriteLine("Erreur lors de l'accès à l'API : " + e.Message);
                 Console.WriteLine("Requête envoyée : " + message + " | " + parametres);
                 Environment.Exit(0);
