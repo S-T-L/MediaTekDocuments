@@ -84,7 +84,10 @@ namespace MediaTekDocuments.controller
         {
             return access.GetAllPublics();
         }
-
+        /// <summary>
+        /// Récupère la liste des abonnements expirants
+        /// </summary>
+        /// <returns>liste d'objets abonnement dont la date de fin abonnement est inférieure à 30 jours</returns>
         public List<Abonnement> GetAbonnementsExpirants()
         {
             List<Abonnement> abonnementsExpirants = new List<Abonnement>();
@@ -103,22 +106,30 @@ namespace MediaTekDocuments.controller
             return abonnementsExpirants;
         }
 
-    public List<Commande> GetAllCommandes()
+        /// <summary>
+        /// Réxupère toutes les commandes
+        /// </summary>
+        /// <returns>Liste d'objets commande</returns>
+        public List<Commande> GetAllCommandes()
         {
             return access.GetAllCommandes();
         }
-    
 
-    /// <summary>
-    /// récupère les exemplaires d'une revue
-    /// </summary>
-    /// <param name="idDocuement">id de la revue concernée</param>
-    /// <returns>Liste d'objets Exemplaire</returns>
-    public List<Exemplaire> GetExemplairesRevue(string idDocuement)
+
+        /// <summary>
+        /// récupère les exemplaires d'une revue
+        /// </summary>
+        /// <param name="idDocuement">id de la revue concernée</param>
+        /// <returns>Liste d'objets Exemplaire</returns>
+        public List<Exemplaire> GetExemplairesRevue(string idDocuement)
         {
             return access.GetExemplairesRevue(idDocuement);
         }
-
+        /// <summary>
+        /// récupère les abonnements associés à une revue
+        /// </summary>
+        /// <param name="idRevue">id de la revue</param>
+        /// <returns>liste d'objets abonnement</returns>
         public List<Abonnement> GetAbonnementsRevue(string idRevue)
         {
             return access.GetAbonnementsRevue(idRevue);
@@ -133,23 +144,28 @@ namespace MediaTekDocuments.controller
         {
             return access.CreerExemplaire(exemplaire);
         }
-
-        public bool CreerAbonnement (Abonnement abonnementRevue)
+        /// <summary>
+        /// Crée un abonnement pour une revue 
+        /// </summary>
+        /// <param name="abonnementRevue">objet revue concerné</param>
+        /// <returns>true si création </returns>
+        public bool CreerAbonnement(Abonnement abonnementRevue)
         {
             return access.CreerAbonnement(abonnementRevue);
         }
-        
+
 
         /// <summary>
-        /// récupère les commandes d'un document
+        /// Retourne la liste des commandes d'un document livre, dvd
         /// </summary>
-        /// <returns>Liste d'objets CommandeDocument</returns>
+        /// <param name="idDocument">id du document</param>
+        /// <returns>Liste d'objets commadeDocument</returns>
         public List<CommandeDocument> GetCommandesDocument(string idDocument)
         {
             return access.GetCommandesDocument(idDocument);
         }
 
-       
+
         /// <summary>
         /// Crée une nouvelle commande de document dans la bdd
         /// </summary>
@@ -159,17 +175,30 @@ namespace MediaTekDocuments.controller
         {
             return access.CreerCommandeDocument(commandeDoc);
         }
-
+        /// <summary>
+        /// Modifie une commande de livre ou dvd 
+        /// </summary>
+        /// <param name="commandeDocument">objet commandeDocument</param>
+        /// <returns>true si la modification a bien été effectuée</returns>
         public bool ModiferCommandeDocument(CommandeDocument commandeDocument)
         {
             return access.ModifierCommandeDocument(commandeDocument);
         }
-
+        /// <summary>
+        /// Supprime une commande en bdd
+        /// </summary>
+        /// <param name="idCommande">id de la commande</param>
+        /// <returns>true si suppression</returns>
         public bool SupprimerCommandeDocument(string idCommande)
         {
             return access.SupprimerCommandeDocument(idCommande);
         }
-         public bool SupprimerAbonnementRevue (string idAbonnement)
+        /// <summary>
+        /// Supprime une commande à un abonnement de revue
+        /// </summary>
+        /// <param name="idAbonnement">id abonnement</param>
+        /// <returns>true si suppression</returns>
+        public bool SupprimerAbonnementRevue(string idAbonnement)
         {
 
             return access.SupprimerCommandeRevue(idAbonnement);

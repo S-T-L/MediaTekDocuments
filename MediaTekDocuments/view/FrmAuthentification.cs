@@ -12,16 +12,34 @@ using MediaTekDocuments.model;
 
 namespace MediaTekDocuments.view
 {
+    /// <summary>
+    /// view
+    /// </summary>
+    internal class NamespaceDoc
+    {
+
+    }
+
+    /// <summary>
+    /// Fenêtre d'authentification
+    /// </summary>
     public partial class FrmAuthentification : Form
 
     {
         private readonly FrmAuthentificationController controller;
+        /// <summary>
+        /// Constructeur
+        /// </summary>
         public FrmAuthentification()
         {
             InitializeComponent();
             this.controller = new FrmAuthentificationController();
         }
-
+        /// <summary>
+        /// clic sur btn Se connecter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
             // Récupération de l'utilisateur authentifié
@@ -40,11 +58,6 @@ namespace MediaTekDocuments.view
             {
                 MessageBox.Show("Erreur sur le login ou le mot de passe.", "Authentification échouée", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void txbNomUtilisateur_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

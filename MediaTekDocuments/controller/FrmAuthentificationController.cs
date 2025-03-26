@@ -10,6 +10,9 @@ using MediaTekDocuments.model;
 
 namespace MediaTekDocuments.controller
 {
+    /// <summary>
+    /// Contrôleur pour FrmAuthentification
+    /// </summary>
     class FrmAuthentificationController
     {
         /// <summary>
@@ -17,17 +20,25 @@ namespace MediaTekDocuments.controller
         /// </summary>
         private readonly Access access;
 
+        /// <summary>
+        /// récupération de l'instance unique d'accès aux données
+        /// </summary>
         public FrmAuthentificationController()
         {
             access = Access.GetInstance();
         }
-
+        /// <summary>
+        /// Vérifie les informations pour l'authentification d'un utilisateur
+        /// </summary>
+        /// <param name="loginUtilisateur">login</param>
+        /// <param name="password">mot de passe</param>
+        /// <returns>utilisateur</returns>
         public Utilisateur GetAuthentification(string loginUtilisateur, string password)
         {
-            // Étape 1 : Récupérer l'utilisateur à partir de la méthode GetAuthentification de la classe Access
+            //Récupère l'utilisateur à partir de la méthode GetAuthentification de la classe Access
             Utilisateur utilisateur = access.GetAuthentification(loginUtilisateur);
 
-            // Si aucun utilisateur n'est trouvé, retour false
+            // Si aucun utilisateur n'est trouvé, retourne false
             if (utilisateur == null)
             {
                 return null;

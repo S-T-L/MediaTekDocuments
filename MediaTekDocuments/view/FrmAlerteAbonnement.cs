@@ -12,16 +12,24 @@ using System.Windows.Forms;
 
 namespace MediaTekDocuments.view
 {
+   
+    /// <summary>
+    /// Fenêtre d'alerte pour les abonnements expirants
+    /// </summary>
     public partial class FrmAlerteAbonnement : Form
     {
 
-        private readonly FrmMediatekController controller;
+        
         private BindingSource bdgAlerteAbo = new BindingSource();
 
+        /// <summary>
+        /// Nouvelle instance
+        /// </summary>
+        /// <param name="abonnementsExpirants">abonnements expirants</param>
         public FrmAlerteAbonnement(List<Abonnement> abonnementsExpirants)
         {
             InitializeComponent();
-            this.controller = new FrmMediatekController();
+           
             bdgAlerteAbo.DataSource = abonnementsExpirants;
             dgvFinAbonnement.DataSource = bdgAlerteAbo;
             dgvFinAbonnement.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -33,7 +41,11 @@ namespace MediaTekDocuments.view
         }
 
       
-
+        /// <summary>
+        /// Clic sur btnAcces pour quitter la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccesAppli_Click(object sender, EventArgs e)
         {
             this.Close();
