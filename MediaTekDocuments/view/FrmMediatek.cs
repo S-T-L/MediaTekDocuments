@@ -1469,7 +1469,6 @@ namespace MediaTekDocuments.view
             }
         }
 
-
         /// <summary>
         /// vérifie si l'identifiant renseigné existe déja
         /// </summary>
