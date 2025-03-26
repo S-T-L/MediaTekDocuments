@@ -56,7 +56,6 @@ namespace MediaTekDocuments.dal
         /// </summary>
         private Access()
         {
-
             try
             {
                 Log.Logger = new LoggerConfiguration()
@@ -78,6 +77,7 @@ namespace MediaTekDocuments.dal
                 Environment.Exit(0);
             }
         }
+
         /// <summary>
         /// Récupération de la chaîne de connexion
         /// </summary>
@@ -387,10 +387,8 @@ namespace MediaTekDocuments.dal
                     Console.WriteLine("[ERREUR] L’API n'a pas retourné de réponse valide.");
                     return liste;
                 }
-
                 // Debug du retour brut de l'API
                 Console.WriteLine("[DEBUG] Retour API : " + retour.ToString());
-
                 String code = (String)retour["code"];
                 if (code.Equals("200"))
                 {

@@ -12,13 +12,7 @@ using MediaTekDocuments.model;
 
 namespace MediaTekDocuments.view
 {
-    /// <summary>
-    /// view
-    /// </summary>
-    internal class NamespaceDoc
-    {
-
-    }
+    
 
     /// <summary>
     /// Fenêtre d'authentification

@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaTekDocuments.model
 {
-    /// <summary>
-    /// model
-    /// </summary>
-    internal class NamespaceDoc
-    {
-
-    }
+  
     /// <summary>
     /// Classe Abonnement : hérite de la classe Commande
     /// </summary>
