@@ -2432,9 +2432,9 @@ namespace MediaTekDocuments.view
             // 
             // btnAjoutCommandeLivre
             // 
-            this.btnAjoutCommandeLivre.Location = new System.Drawing.Point(286, 52);
+            this.btnAjoutCommandeLivre.Location = new System.Drawing.Point(375, 52);
             this.btnAjoutCommandeLivre.Name = "btnAjoutCommandeLivre";
-            this.btnAjoutCommandeLivre.Size = new System.Drawing.Size(118, 55);
+            this.btnAjoutCommandeLivre.Size = new System.Drawing.Size(114, 69);
             this.btnAjoutCommandeLivre.TabIndex = 8;
             this.btnAjoutCommandeLivre.Text = "Ajouter une commande";
             this.btnAjoutCommandeLivre.UseVisualStyleBackColor = true;
@@ -2442,40 +2442,44 @@ namespace MediaTekDocuments.view
             // 
             // txbCommandeLivreNbEx
             // 
-            this.txbCommandeLivreNbEx.Location = new System.Drawing.Point(180, 85);
+            this.txbCommandeLivreNbEx.Location = new System.Drawing.Point(200, 93);
+            this.txbCommandeLivreNbEx.Multiline = true;
             this.txbCommandeLivreNbEx.Name = "txbCommandeLivreNbEx";
-            this.txbCommandeLivreNbEx.Size = new System.Drawing.Size(100, 22);
+            this.txbCommandeLivreNbEx.Size = new System.Drawing.Size(100, 28);
             this.txbCommandeLivreNbEx.TabIndex = 7;
             // 
             // lblNbExemplaire
             // 
             this.lblNbExemplaire.AutoSize = true;
-            this.lblNbExemplaire.Location = new System.Drawing.Point(6, 90);
+            this.lblNbExemplaire.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNbExemplaire.Location = new System.Drawing.Point(8, 97);
             this.lblNbExemplaire.Name = "lblNbExemplaire";
-            this.lblNbExemplaire.Size = new System.Drawing.Size(148, 17);
+            this.lblNbExemplaire.Size = new System.Drawing.Size(168, 17);
             this.lblNbExemplaire.TabIndex = 6;
             this.lblNbExemplaire.Text = "Nombre d\'exemplaires";
             // 
             // txbCommandeLivreMontant
             // 
-            this.txbCommandeLivreMontant.Location = new System.Drawing.Point(180, 119);
+            this.txbCommandeLivreMontant.Location = new System.Drawing.Point(200, 131);
+            this.txbCommandeLivreMontant.Multiline = true;
             this.txbCommandeLivreMontant.Name = "txbCommandeLivreMontant";
-            this.txbCommandeLivreMontant.Size = new System.Drawing.Size(100, 22);
+            this.txbCommandeLivreMontant.Size = new System.Drawing.Size(100, 28);
             this.txbCommandeLivreMontant.TabIndex = 5;
             // 
             // lblMontant
             // 
             this.lblMontant.AutoSize = true;
-            this.lblMontant.Location = new System.Drawing.Point(6, 119);
+            this.lblMontant.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontant.Location = new System.Drawing.Point(9, 134);
             this.lblMontant.Name = "lblMontant";
-            this.lblMontant.Size = new System.Drawing.Size(59, 17);
+            this.lblMontant.Size = new System.Drawing.Size(66, 17);
             this.lblMontant.TabIndex = 4;
             this.lblMontant.Text = "Montant";
             // 
             // dtpCommandeLivreDate
             // 
             this.dtpCommandeLivreDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCommandeLivreDate.Location = new System.Drawing.Point(180, 30);
+            this.dtpCommandeLivreDate.Location = new System.Drawing.Point(200, 29);
             this.dtpCommandeLivreDate.Name = "dtpCommandeLivreDate";
             this.dtpCommandeLivreDate.Size = new System.Drawing.Size(100, 22);
             this.dtpCommandeLivreDate.TabIndex = 3;
@@ -2483,25 +2487,28 @@ namespace MediaTekDocuments.view
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(11, 30);
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(8, 29);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(146, 17);
+            this.label65.Size = new System.Drawing.Size(165, 17);
             this.label65.TabIndex = 2;
             this.label65.Text = "Date de la commande";
             // 
             // txbNumCommandeLivre
             // 
-            this.txbNumCommandeLivre.Location = new System.Drawing.Point(180, 58);
+            this.txbNumCommandeLivre.Location = new System.Drawing.Point(200, 57);
+            this.txbNumCommandeLivre.Multiline = true;
             this.txbNumCommandeLivre.Name = "txbNumCommandeLivre";
-            this.txbNumCommandeLivre.Size = new System.Drawing.Size(100, 22);
+            this.txbNumCommandeLivre.Size = new System.Drawing.Size(100, 26);
             this.txbNumCommandeLivre.TabIndex = 1;
             // 
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(6, 63);
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(8, 61);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(151, 17);
+            this.label64.Size = new System.Drawing.Size(169, 17);
             this.label64.TabIndex = 0;
             this.label64.Text = "Numéro de commande";
             // 
@@ -2786,7 +2793,7 @@ namespace MediaTekDocuments.view
             // 
             this.btnMAJSuiviCommandeDvd.Location = new System.Drawing.Point(71, 126);
             this.btnMAJSuiviCommandeDvd.Name = "btnMAJSuiviCommandeDvd";
-            this.btnMAJSuiviCommandeDvd.Size = new System.Drawing.Size(151, 33);
+            this.btnMAJSuiviCommandeDvd.Size = new System.Drawing.Size(151, 40);
             this.btnMAJSuiviCommandeDvd.TabIndex = 23;
             this.btnMAJSuiviCommandeDvd.Text = "Mettre à jour";
             this.btnMAJSuiviCommandeDvd.UseVisualStyleBackColor = true;
@@ -2795,9 +2802,10 @@ namespace MediaTekDocuments.view
             // label74
             // 
             this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label74.Location = new System.Drawing.Point(6, 60);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(141, 17);
+            this.label74.Size = new System.Drawing.Size(200, 21);
             this.label74.TabIndex = 22;
             this.label74.Text = "Etat de la commande";
             // 
@@ -2872,9 +2880,9 @@ namespace MediaTekDocuments.view
             // 
             // btnAjoutComDvd
             // 
-            this.btnAjoutComDvd.Location = new System.Drawing.Point(286, 52);
+            this.btnAjoutComDvd.Location = new System.Drawing.Point(361, 65);
             this.btnAjoutComDvd.Name = "btnAjoutComDvd";
-            this.btnAjoutComDvd.Size = new System.Drawing.Size(118, 55);
+            this.btnAjoutComDvd.Size = new System.Drawing.Size(118, 61);
             this.btnAjoutComDvd.TabIndex = 8;
             this.btnAjoutComDvd.Text = "Ajouter une commande";
             this.btnAjoutComDvd.UseVisualStyleBackColor = true;
@@ -2882,23 +2890,25 @@ namespace MediaTekDocuments.view
             // 
             // txbCommandeDvdNbEx
             // 
-            this.txbCommandeDvdNbEx.Location = new System.Drawing.Point(180, 85);
+            this.txbCommandeDvdNbEx.Location = new System.Drawing.Point(195, 100);
+            this.txbCommandeDvdNbEx.Multiline = true;
             this.txbCommandeDvdNbEx.Name = "txbCommandeDvdNbEx";
-            this.txbCommandeDvdNbEx.Size = new System.Drawing.Size(100, 22);
+            this.txbCommandeDvdNbEx.Size = new System.Drawing.Size(100, 26);
             this.txbCommandeDvdNbEx.TabIndex = 7;
             // 
             // label86
             // 
             this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(6, 90);
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.Location = new System.Drawing.Point(8, 103);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(148, 17);
+            this.label86.Size = new System.Drawing.Size(168, 17);
             this.label86.TabIndex = 6;
             this.label86.Text = "Nombre d\'exemplaires";
             // 
             // txbCommandeDvdMontant
             // 
-            this.txbCommandeDvdMontant.Location = new System.Drawing.Point(180, 119);
+            this.txbCommandeDvdMontant.Location = new System.Drawing.Point(195, 139);
             this.txbCommandeDvdMontant.Name = "txbCommandeDvdMontant";
             this.txbCommandeDvdMontant.Size = new System.Drawing.Size(100, 22);
             this.txbCommandeDvdMontant.TabIndex = 5;
@@ -2906,16 +2916,17 @@ namespace MediaTekDocuments.view
             // label87
             // 
             this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(6, 119);
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.Location = new System.Drawing.Point(8, 139);
             this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(59, 17);
+            this.label87.Size = new System.Drawing.Size(66, 17);
             this.label87.TabIndex = 4;
             this.label87.Text = "Montant";
             // 
             // dtpCommandeDvdDate
             // 
             this.dtpCommandeDvdDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCommandeDvdDate.Location = new System.Drawing.Point(180, 30);
+            this.dtpCommandeDvdDate.Location = new System.Drawing.Point(195, 30);
             this.dtpCommandeDvdDate.Name = "dtpCommandeDvdDate";
             this.dtpCommandeDvdDate.Size = new System.Drawing.Size(100, 22);
             this.dtpCommandeDvdDate.TabIndex = 3;
@@ -2923,25 +2934,28 @@ namespace MediaTekDocuments.view
             // label88
             // 
             this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(11, 30);
+            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label88.Location = new System.Drawing.Point(8, 35);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(146, 17);
+            this.label88.Size = new System.Drawing.Size(165, 17);
             this.label88.TabIndex = 2;
             this.label88.Text = "Date de la commande";
             // 
             // txbNumCommandeDvd
             // 
-            this.txbNumCommandeDvd.Location = new System.Drawing.Point(180, 58);
+            this.txbNumCommandeDvd.Location = new System.Drawing.Point(195, 63);
+            this.txbNumCommandeDvd.Multiline = true;
             this.txbNumCommandeDvd.Name = "txbNumCommandeDvd";
-            this.txbNumCommandeDvd.Size = new System.Drawing.Size(100, 22);
+            this.txbNumCommandeDvd.Size = new System.Drawing.Size(100, 26);
             this.txbNumCommandeDvd.TabIndex = 1;
             // 
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(6, 63);
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.Location = new System.Drawing.Point(8, 67);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(151, 17);
+            this.label89.Size = new System.Drawing.Size(169, 17);
             this.label89.TabIndex = 0;
             this.label89.Text = "Numéro de commande";
             // 
@@ -3017,7 +3031,7 @@ namespace MediaTekDocuments.view
             // 
             this.btnSupprAbonnement.Location = new System.Drawing.Point(418, 110);
             this.btnSupprAbonnement.Name = "btnSupprAbonnement";
-            this.btnSupprAbonnement.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprAbonnement.Size = new System.Drawing.Size(92, 46);
             this.btnSupprAbonnement.TabIndex = 17;
             this.btnSupprAbonnement.Text = "Supprimer";
             this.btnSupprAbonnement.UseVisualStyleBackColor = true;
@@ -3025,9 +3039,9 @@ namespace MediaTekDocuments.view
             // 
             // btnAjoutAbonnement
             // 
-            this.btnAjoutAbonnement.Location = new System.Drawing.Point(418, 48);
+            this.btnAjoutAbonnement.Location = new System.Drawing.Point(418, 44);
             this.btnAjoutAbonnement.Name = "btnAjoutAbonnement";
-            this.btnAjoutAbonnement.Size = new System.Drawing.Size(75, 23);
+            this.btnAjoutAbonnement.Size = new System.Drawing.Size(92, 47);
             this.btnAjoutAbonnement.TabIndex = 16;
             this.btnAjoutAbonnement.Text = "Ajouter";
             this.btnAjoutAbonnement.UseVisualStyleBackColor = true;
@@ -3036,66 +3050,70 @@ namespace MediaTekDocuments.view
             // dtpDateFinAbonnement
             // 
             this.dtpDateFinAbonnement.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateFinAbonnement.Location = new System.Drawing.Point(182, 106);
+            this.dtpDateFinAbonnement.Location = new System.Drawing.Point(191, 120);
             this.dtpDateFinAbonnement.Name = "dtpDateFinAbonnement";
-            this.dtpDateFinAbonnement.Size = new System.Drawing.Size(100, 22);
+            this.dtpDateFinAbonnement.Size = new System.Drawing.Size(114, 22);
             this.dtpDateFinAbonnement.TabIndex = 15;
             // 
             // label90
             // 
-            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label90.Location = new System.Drawing.Point(8, 110);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(171, 17);
+            this.label90.Size = new System.Drawing.Size(130, 42);
             this.label90.TabIndex = 14;
             this.label90.Text = "Date de fin d\'abonnement";
             // 
             // txbAbonnementMontant
             // 
-            this.txbAbonnementMontant.Location = new System.Drawing.Point(182, 139);
+            this.txbAbonnementMontant.Location = new System.Drawing.Point(191, 159);
+            this.txbAbonnementMontant.Multiline = true;
             this.txbAbonnementMontant.Name = "txbAbonnementMontant";
-            this.txbAbonnementMontant.Size = new System.Drawing.Size(100, 22);
+            this.txbAbonnementMontant.Size = new System.Drawing.Size(114, 28);
             this.txbAbonnementMontant.TabIndex = 13;
             // 
             // label91
             // 
             this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(8, 139);
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.Location = new System.Drawing.Point(8, 166);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(59, 17);
+            this.label91.Size = new System.Drawing.Size(83, 21);
             this.label91.TabIndex = 12;
             this.label91.Text = "Montant";
             // 
             // dtpAbonnementDate
             // 
             this.dtpAbonnementDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAbonnementDate.Location = new System.Drawing.Point(182, 50);
+            this.dtpAbonnementDate.Location = new System.Drawing.Point(191, 28);
             this.dtpAbonnementDate.Name = "dtpAbonnementDate";
-            this.dtpAbonnementDate.Size = new System.Drawing.Size(100, 22);
+            this.dtpAbonnementDate.Size = new System.Drawing.Size(114, 22);
             this.dtpAbonnementDate.TabIndex = 11;
             // 
             // label92
             // 
             this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(13, 50);
+            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.Location = new System.Drawing.Point(6, 30);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(146, 17);
+            this.label92.Size = new System.Drawing.Size(206, 21);
             this.label92.TabIndex = 10;
             this.label92.Text = "Date de la commande";
             // 
             // txbAbonnementNumCommande
             // 
-            this.txbAbonnementNumCommande.Location = new System.Drawing.Point(182, 78);
+            this.txbAbonnementNumCommande.Location = new System.Drawing.Point(191, 63);
+            this.txbAbonnementNumCommande.Multiline = true;
             this.txbAbonnementNumCommande.Name = "txbAbonnementNumCommande";
-            this.txbAbonnementNumCommande.Size = new System.Drawing.Size(100, 22);
+            this.txbAbonnementNumCommande.Size = new System.Drawing.Size(114, 28);
             this.txbAbonnementNumCommande.TabIndex = 9;
             // 
             // label99
             // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(8, 83);
+            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label99.Location = new System.Drawing.Point(7, 70);
             this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(151, 17);
+            this.label99.Size = new System.Drawing.Size(239, 21);
             this.label99.TabIndex = 8;
             this.label99.Text = "Numéro de commande";
             // 

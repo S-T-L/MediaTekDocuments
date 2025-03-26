@@ -4,6 +4,13 @@ using System.Windows.Forms;
 
 namespace MediaTekDocuments
 {
+    /// <summary>
+    /// Application de consultation et gestion des documents de la médiathèque
+    /// </summary>
+    internal class NameSpaceDoc
+    {
+
+    }
     static class Program
     {
         /// <summary>
@@ -14,7 +21,6 @@ namespace MediaTekDocuments
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmMediatek());
             Application.Run(new FrmAuthentification());
         }
     }
