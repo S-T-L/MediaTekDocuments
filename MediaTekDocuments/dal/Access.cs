@@ -78,6 +78,20 @@ namespace MediaTekDocuments.dal
                 Environment.Exit(0);
             }
         }
+        /// <summary>
+        /// Récupération de la chaîne de connexion
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        static string GetConnectionString(string name)
+        {
+            string returnValue = null;
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings[name];
+            if (settings != null)
+                returnValue = settings.ConnectionString;
+            return returnValue;
+        }
+
 
         /// <summary>
         /// Récupération de la chaîne de connexion
