@@ -94,21 +94,6 @@ namespace MediaTekDocuments.dal
 
 
         /// <summary>
-        /// Récupération de la chaîne de connexion
-        /// </summary>
-        /// <param name="name">nom</param>
-        /// <returns>returnValue</returns>
-        static string GetConnectionString(string name)
-        {
-            string returnValue = null;
-            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings[name];
-            if (settings != null)
-                returnValue = settings.ConnectionString;
-            return returnValue;
-        }
-
-
-        /// <summary>
         /// Création et retour de l'instance unique de la classe
         /// </summary>
         /// <returns>instance unique de la classe</returns>
