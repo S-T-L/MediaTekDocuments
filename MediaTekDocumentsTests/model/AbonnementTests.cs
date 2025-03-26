@@ -15,7 +15,7 @@ namespace MediaTekDocuments.model.Tests
         private const string id = "23";
         private static readonly DateTime dateCommande = DateTime.Now;
         private const double montant = 23;
-        private static readonly DateTime dateFinAbonnement = new DateTime(2025, 4, 20);
+        private static readonly DateTime dateFinAbonnement = new DateTime(2025, 4, 20, 0, 0, 0, DateTimeKind.Utc);
         private const string idRevue = "10111";
 
         private static readonly Abonnement abonnement = new Abonnement(id, dateCommande, montant, dateFinAbonnement, idRevue);

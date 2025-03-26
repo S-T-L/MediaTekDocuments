@@ -18,11 +18,7 @@ namespace MediaTekDocuments.model.Tests
         private const string idLivreDvd = "00010";
         private const int idSuivi = 1;
         private const string libelle = "en cours";
-
         private static readonly CommandeDocument commandeDocument = new CommandeDocument(id, dateCommande, montant, nbExemplaire, idLivreDvd, idSuivi, libelle);
-
-
-
 
         [TestMethod()]
         public void CommandeDocumentTest()

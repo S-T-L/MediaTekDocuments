@@ -1,36 +1,36 @@
-﻿C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\controller\FrmAuthentificationController.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\manager\ApiRest.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\controller\FrmMediatekController.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\dal\Access.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Abonnement.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Commande.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\CommandeDocument.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Service.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Suivi.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Utilisateur.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAlerteAbonnement.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAlerteAbonnement.Designer.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAuthentification.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAuthentification.Designer.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmMediatek.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmMediatek.Designer.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Categorie.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Document.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Dvd.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Etat.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Exemplaire.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Genre.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Livre.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\LivreDvd.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Public.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Rayon.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Revue.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Program.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Properties\AssemblyInfo.cs
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Properties\Resources.resx
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAlerteAbonnement.resx
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAuthentification.resx
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmMediatek.resx
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\packages.config
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Properties\Settings.settings
-C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\App.config
+﻿C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\controller\FrmAuthentificationController.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\manager\ApiRest.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\controller\FrmMediatekController.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\dal\Access.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Abonnement.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Commande.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\CommandeDocument.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Service.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Suivi.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Utilisateur.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAlerteAbonnement.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAlerteAbonnement.Designer.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAuthentification.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAuthentification.Designer.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmMediatek.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmMediatek.Designer.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Categorie.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Document.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Dvd.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Etat.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Exemplaire.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Genre.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Livre.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\LivreDvd.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Public.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Rayon.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\model\Revue.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Program.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Properties\AssemblyInfo.cs
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Properties\Resources.resx
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAlerteAbonnement.resx
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmAuthentification.resx
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\view\FrmMediatek.resx
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\packages.config
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\Properties\Settings.settings
+C:\Users\estel\Desktop\BTS SIO\2annee\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocuments\App.config
