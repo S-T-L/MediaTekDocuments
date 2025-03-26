@@ -1419,7 +1419,6 @@ namespace MediaTekDocuments.view
             }
         }
 
-
         /// <summary>
         /// Affichage des informations du livre recherché
         /// </summary>
