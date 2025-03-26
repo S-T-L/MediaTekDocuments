@@ -1,0 +1,9 @@
+﻿C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocumentsTests\model\AbonnementTests.cs
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocumentsTests\Properties\AssemblyInfo.cs
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\estel\Desktop\BTS SIO\2ème année\ATELIERS PRO\ATELIER 2 C#\MediaTekDocuments\MediaTekDocumentsTests\packages.config

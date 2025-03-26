@@ -19,7 +19,11 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// adresse de l'API
         /// </summary>
-        private static readonly string uriApi = "http://localhost/rest_mediatekdocuments/";
+        private static readonly string connectionName = "MediaTekDocuments.Properties.Settings.mediatekConnectionString";
+        /// <summary>
+        /// Login api
+        /// </summary>
+        private static readonly string authenticationName = "MediaTekDocuments.Properties.Settings.mediatekAuthenticationString";
         /// <summary>
         /// instance unique de la classe
         /// </summary>
