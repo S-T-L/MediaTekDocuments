@@ -362,6 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Ignorer le fichier de configuration de l'application
-app.config
-App.config
+
