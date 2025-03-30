@@ -32,5 +32,25 @@ namespace MediaTekDocuments.Properties {
                 return ((string)(this["mediatek86ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("stlAdminMediatek:yaKmEmB7GWKHGp5tj3Qn")]
+        public string mediatekAuthenticationString {
+            get {
+                return ((string)(this["mediatekAuthenticationString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://restmediatekdocument.alwaysdata.net/")]
+        public string mediatekConnectionString {
+            get {
+                return ((string)(this["mediatekConnectionString"]));
+            }
+        }
     }
 }

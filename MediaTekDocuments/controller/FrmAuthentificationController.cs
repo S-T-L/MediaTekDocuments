@@ -46,6 +46,9 @@ namespace MediaTekDocuments.controller
 
             // Vérification du mot de passe haché
             string passwordHache = HashPassword(password);
+            Console.WriteLine("Mot de passe haché fourni: " + passwordHache);
+            Console.WriteLine("Mot de passe dans la base de données: " + utilisateur.Password);
+
             if (passwordHache != utilisateur.Password)
             {
                 return null; // Échec de l'authentification
