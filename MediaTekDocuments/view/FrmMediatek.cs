@@ -56,11 +56,12 @@ namespace MediaTekDocuments.view
         {
             // Récupérer les abonnements expirants depuis le contrôleur
             List<Abonnement> abonnementsExpirants = controller.GetAbonnementsExpirants();
+            List<Revue> lesAbonnementsRevues = controller.GetAllRevues();
 
             // S'il y a des abonnements expirants, afficher l'alerte
             if (abonnementsExpirants.Any())
             {
-                FrmAlerteAbonnement frmAlerteAbonnement = new FrmAlerteAbonnement(abonnementsExpirants);
+                FrmAlerteAbonnement frmAlerteAbonnement = new FrmAlerteAbonnement(abonnementsExpirants, lesAbonnementsRevues);
                 frmAlerteAbonnement.ShowDialog();
             }
         }

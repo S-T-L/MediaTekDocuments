@@ -103,7 +103,7 @@ namespace MediaTekDocuments.controller
                 abonnementsExpirants.AddRange(expirants);
             }
 
-            return abonnementsExpirants;
+            return abonnementsExpirants.OrderBy( a=> a.DateFinAbonnement).ToList();
         }
 
         /// <summary>

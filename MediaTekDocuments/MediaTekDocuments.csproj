@@ -116,7 +116,9 @@
     <Compile Include="view\FrmAlerteAbonnement.Designer.cs">
       <DependentUpon>FrmAlerteAbonnement.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FrmAuthentification.cs" />
+    <Compile Include="view\FrmAuthentification.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="view\FrmAuthentification.Designer.cs">
       <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </Compile>
