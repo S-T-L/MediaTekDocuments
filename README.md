@@ -3,7 +3,7 @@
 Le dépôt d'origine de l'application MediaTekDocuments est disponible ici : https://github.com/CNED-SLAM/MediaTekDocuments <br>
 Celui-ci contient la présentation complète de l'application de base.
 # Fonctionnalités ajoutées :
-## - Création de 3 nouveaux onglets pour la gestion des commandes : 
+## Création de 3 nouveaux onglets pour la gestion des commandes : 
 ![Capture d'écran 2025-04-01 085728](https://github.com/user-attachments/assets/ee346ded-7276-4eab-81f7-73039ac76321)
 ### Onglets Commande de livre et Dvd : 
 L'interface permet à l'utilisateur de saisir le numéro d'un document afin d'afficher ses informations ainsi que la liste des commandes associées.
@@ -16,15 +16,15 @@ Le fonctionnement est similaire à celui des onglets dédiés aux livres et DVD,
 
 
 ## Mise en place d'une fenêtre d'authentification
-![Capture d'écran 2025-03-31 113938](https://github.com/user-attachments/assets/336fa2de-df15-4f5e-8471-e1616ccb4cd6)
+![Capture d'écran 2025-03-31 113938](https://github.com/user-attachments/assets/336fa2de-df15-4f5e-8471-e1616ccb4cd6)<br>
 Pour se connecter, l'utilisateur doit saisir son identifiant et son mot de passe. L'accès aux fonctionnalités de l'application dépends de son service de rattachement : <br>
-- Les utilisateurs du service Culture n'ont pas les droits d'accès à l'application. Lorsqu'ils tentent de se connecter, un message d'information s'affiche :
-![Capture d'écran 2025-03-31 140222](https://github.com/user-attachments/assets/5739a20e-e484-4c21-850f-d44246529170)
+- Les utilisateurs du service Culture n'ont pas les droits d'accès à l'application. Lorsqu'ils tentent de se connecter, un message d'information s'affiche :<br>
+![Capture d'écran 2025-03-31 140222](https://github.com/user-attachments/assets/5739a20e-e484-4c21-850f-d44246529170)<br>
 - Les utilisateurs du service "Prêt" ont uniquement accès aux onglets de consultation des documents.<br>
 - Le service administratif et les administrateurs disposent d'un accès complet à toutes les fonctionnalités de l'application
 
 ## Fenêtre d'alerte pour les abonnements expirants dans moins de 30 jours : 
-Lorsqu'un utilisateur disposant de tous les droits accède à l'application, une fenêtre s'affiche pour lui signaler les abonnements arrivant à expiration.
+Lorsqu'un utilisateur disposant de tous les droits accède à l'application, une fenêtre s'affiche pour lui signaler les abonnements arrivant à expiration.<br>
 ![Capture d'écran 2025-03-31 105229](https://github.com/user-attachments/assets/ded4444d-a083-4fe9-b476-3c446a44881f)
 
 
