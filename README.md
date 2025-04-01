@@ -31,10 +31,10 @@ Lorsqu'un utilisateur disposant de tous les droits accède à l'application, une
 ## La base de données
 La base de données 'mediatek86 ' est au format MySQL.<br>
 Voici sa structure :<br>
-![bdd](https://github.com/user-attachments/assets/843b3553-3513-4f74-9367-a73b82e6e7a1)
+![bdd](https://github.com/user-attachments/assets/843b3553-3513-4f74-9367-a73b82e6e7a1)<br>
 Une nouvelle table, Suivi, a été ajoutée à la base de données d'origine. Elle contient l'ID du suivi ainsi que son libellé et est reliée à la table CommandeDocument afin de permettre la gestion du suivi des commandes.
 <br>
-![Capture d'écran 2025-03-12 101041](https://github.com/user-attachments/assets/7a55a7d8-4bd1-4533-9812-3cc99fb9085e)
+![Capture d'écran 2025-03-12 101041](https://github.com/user-attachments/assets/7a55a7d8-4bd1-4533-9812-3cc99fb9085e)<br>
 Deux nouvelles tables indépendantes ont également été ajoutées à la base de données : la table utilisateur et la table service. Chaque utilisateur est associé à un seul service.
 La base de données est remplie de quelques exemples pour pouvoir tester son application. Dans les champs image (de Document) et photo (de Exemplaire) doit normalement se trouver le chemin complet vers l'image correspondante. Pour les tests, vous devrez créer un dossier, le remplir de quelques images et mettre directement les chemins dans certains tuples de la base de données qui, pour le moment, ne contient aucune image.<br>
 Lorsque l'application sera opérationnelle, c'est le personnel de la médiathèque qui sera en charge de saisir les informations des documents.
