@@ -11,7 +11,10 @@ using MediaTekDocuments.controller;
 using MediaTekDocuments.model;
 
 namespace MediaTekDocuments.view
-{
+{   
+    /// <summary>
+    /// Forumulaire d'authentification
+    /// </summary>
     public partial class FrmAuthentification : Form
     {
         private readonly FrmAuthentificationController controller;
@@ -32,7 +35,6 @@ namespace MediaTekDocuments.view
         {
             // Récupération de l'utilisateur authentifié
             Utilisateur utilisateur = controller.GetAuthentification(txbNomUtilisateur.Text, txbPassword.Text);
-
             // Vérification si l'utilisateur est bien authentifié
             if (utilisateur != null)
             {

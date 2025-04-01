@@ -10,7 +10,6 @@ using System.IO;
 namespace MediaTekDocuments.view
 
 {
-  
     /// <summary>
     /// Classe d'affichage
     /// </summary>
@@ -65,6 +64,7 @@ namespace MediaTekDocuments.view
                 frmAlerteAbonnement.ShowDialog();
             }
         }
+
         /// <summary>
         /// Visibilité des éléments selon l'utilisateur connecté et son service
         /// </summary>
@@ -79,7 +79,6 @@ namespace MediaTekDocuments.view
                 tabOngletsApplication.TabPages.Remove(tabCommandeRevue);
                 tabOngletsApplication.TabPages.Remove(tabReceptionRevue);
             }
-
         }
         /// <summary>
         /// Affichage de l'alerte pour les abonnements selon l'utilisateur authentifié
@@ -88,8 +87,6 @@ namespace MediaTekDocuments.view
         /// <param name="e"></param>
         private void FrmMediatek_Shown(object sender, EventArgs e)
         {
-
-
             // Vérifier les abonnements si l'utilisateur est autorisé
             if (utilisateurAuth.Service.Libelle == "administratif" || utilisateurAuth.Service.Libelle == "administrateur")
             {

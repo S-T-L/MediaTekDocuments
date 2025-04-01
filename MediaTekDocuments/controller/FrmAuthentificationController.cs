@@ -52,10 +52,7 @@ namespace MediaTekDocuments.controller
             if (passwordHache != utilisateur.Password)
             {
                 return null; // Échec de l'authentification
-            }
-
-           
-
+            }          
             return utilisateur;
         }
 

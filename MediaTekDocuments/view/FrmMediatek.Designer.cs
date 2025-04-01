@@ -596,6 +596,7 @@ namespace MediaTekDocuments.view
             // 
             // grpLivresRecherche
             // 
+            this.grpLivresRecherche.Controls.Add(this.dgvLivresListe);
             this.grpLivresRecherche.Controls.Add(this.btnLivresAnnulRayons);
             this.grpLivresRecherche.Controls.Add(this.btnlivresAnnulPublics);
             this.grpLivresRecherche.Controls.Add(this.btnLivresNumRecherche);
@@ -608,7 +609,6 @@ namespace MediaTekDocuments.view
             this.grpLivresRecherche.Controls.Add(this.label20);
             this.grpLivresRecherche.Controls.Add(this.cbxLivresGenres);
             this.grpLivresRecherche.Controls.Add(this.label14);
-            this.grpLivresRecherche.Controls.Add(this.dgvLivresListe);
             this.grpLivresRecherche.Controls.Add(this.label6);
             this.grpLivresRecherche.Controls.Add(this.txbLivresTitreRecherche);
             this.grpLivresRecherche.Location = new System.Drawing.Point(11, 16);
@@ -2805,7 +2805,7 @@ namespace MediaTekDocuments.view
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label74.Location = new System.Drawing.Point(6, 60);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(200, 21);
+            this.label74.Size = new System.Drawing.Size(160, 17);
             this.label74.TabIndex = 22;
             this.label74.Text = "Etat de la commande";
             // 
@@ -3078,7 +3078,7 @@ namespace MediaTekDocuments.view
             this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label91.Location = new System.Drawing.Point(8, 166);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(83, 21);
+            this.label91.Size = new System.Drawing.Size(66, 17);
             this.label91.TabIndex = 12;
             this.label91.Text = "Montant";
             // 
@@ -3096,7 +3096,7 @@ namespace MediaTekDocuments.view
             this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label92.Location = new System.Drawing.Point(6, 30);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(206, 21);
+            this.label92.Size = new System.Drawing.Size(165, 17);
             this.label92.TabIndex = 10;
             this.label92.Text = "Date de la commande";
             // 

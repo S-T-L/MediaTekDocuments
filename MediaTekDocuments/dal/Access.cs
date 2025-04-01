@@ -11,6 +11,7 @@ using Serilog;
 
 namespace MediaTekDocuments.dal
 {
+    
     /// <summary>
     /// Classe d'accès aux données
     /// </summary>
