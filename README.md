@@ -41,7 +41,7 @@ Lorsque l'application sera opérationnelle, c'est le personnel de la médiathèq
 ## L'API REST
 L'accès à la BDD se fait à travers une API REST protégée par une authentification basique.<br>
 Le code de l'API se trouve ici :<br>
-[https://github.com/CNED-SLAM/rest_mediatekdocuments<br>](https://github.com/S-T-L/rest_mediatekdocuments)
+https://github.com/S-T-L/rest_mediatekdocuments
 avec toutes les explications pour l'utiliser (dans le readme).
 ## Installation de l'application 
 ### A l'aide de l'installateur
@@ -52,4 +52,4 @@ https://github.com/S-T-L/MediaTekDocuments/tree/master/Fichiers%20d'installation
 Ce mode opératoire permet d'installer l'application pour pouvoir travailler dessus.<br>
 - Installer Visual Studio 2019 entreprise et newtonsoft.json (pour ce dernier, voir l'article "Accéder à une API REST à partir d'une application C#" dans le wiki de ce dépôt : consulter juste le début pour la configuration, car la suite permet de comprendre le code existant).<br>
 - Télécharger le code et le dézipper puis renommer le dossier en "mediatekdocuments".<br>
-- Récupérer et installer l'API REST nécessaire ([https://github.com/CNED-SLAM/rest_mediatekdocuments](https://github.com/S-T-L/rest_mediatekdocuments)) ainsi que la base de données (les explications sont données dans le readme correspondant).
+- Récupérer et installer l'API REST nécessaire (https://github.com/S-T-L/rest_mediatekdocuments) ainsi que la base de données (les explications sont données dans le readme correspondant).
